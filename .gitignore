@@ -5,6 +5,7 @@ ugsphp/conf/Config.php
 ugsphp/cache/SongList.cache
 ugsphp/cache/SongList.info
 .htaccess
-cpm/
+cpm/*
+!cpm/.gitkeep
 songs/
 .ovhconfig
