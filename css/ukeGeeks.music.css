@@ -10,6 +10,7 @@
 */
 .ugs-song-wrap {
 	font-size: 100%;
+  cursor: default;
 }
 .ugs-song-wrap,
 .ugs-song-wrap h5,
@@ -32,6 +33,11 @@
 .ugs-song-wrap pre{
 	background-color: transparent;
 }
+
+.ugs-songInfo {
+  cursor: default;
+}
+
 /*
 ,
 .ugs-song-wrap canvas,
@@ -337,4 +343,3 @@
   margin: 20px auto 0 auto;
   width: 300px;
 }
-
