@@ -79,5 +79,11 @@
 	 * Allowed values : true, false
    * Default : true
 	 */
-	// "autoScrollFeature": true
+	// "autoScrollFeature": true,
+
+	/* Enable/disable the chords hovering feature
+	 * Allowed values : true, false
+   * Default : false
+	 */
+	 // "chordsHovering": false
 }

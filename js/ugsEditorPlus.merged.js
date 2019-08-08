@@ -30,9 +30,9 @@ ugsEditorPlus.options = {
 	 *  Allowed values: true, false
 	 * @property showEditOnLoad
 	 * @type Boolean
-	 * @default true
+	 * @default false
 	 */
-	showEditOnLoad: true,
+	showEditOnLoad: false,
 
 	/**
 	 * Lyric's font size (pts)
@@ -50,9 +50,9 @@ ugsEditorPlus.options = {
 	 *  Allowed values: 40 ("tiny"), 65 ("small"), 80 ("medium"), 90 ("large"), 100 ("x-large")
 	 * @property diagramSize
 	 * @type Integer
-	 * @default 100
+	 * @default 80
 	 */
-	diagramSize: 100,
+	diagramSize: 80,
 
 	/**
 	 * Specify where reference diagrams should be show
@@ -60,9 +60,9 @@ ugsEditorPlus.options = {
 	 *  Allowed values: left, top, or none
 	 * @property diagramPosition
 	 * @type Text
-	 * @default left
+	 * @default top
 	 */
-	diagramPosition: "left",
+	diagramPosition: "top",
 
 	/**
 	 * Specify how chord names within lyrics should be shown
@@ -80,9 +80,9 @@ ugsEditorPlus.options = {
 	 *  Allowed values: letter, a4, screen
 	 * @property paper
 	 * @type Text
-	 * @default letter
+	 * @default a4
 	 */
-	paper: "letter",
+	paper: "a4",
 
 	/**
 	 * Theme shortname applied on page load.
@@ -110,9 +110,9 @@ ugsEditorPlus.options = {
 	 *  Allowed values: true, false
 	 * @property hideChordEnclosures
 	 * @type Boolean
-	 * @default see UkeGeeks.settings
+	 * @default true
 	 */
-	hideChordEnclosures: false,
+	hideChordEnclosures: true,
 
 	/**
 	 * Order in which reference diagrams are sorted, either alphabetically (true) or order
@@ -121,7 +121,7 @@ ugsEditorPlus.options = {
 	 * Allowed values: true, false
 	 * @property sortAlphabetical
 	 * @type Boolean
-	 * @default see UkeGeeks.settings
+	 * @default false
 	 */
 	sortAlphabetical: false,
 
@@ -131,7 +131,7 @@ ugsEditorPlus.options = {
 	 * Allowed values: true, false
 	 * @property ignoreCommonChords
 	 * @type Boolean
-	 * @default see UkeGeeks.settings
+	 * @default false
 	 */
 	ignoreCommonChords: false,
 
@@ -141,9 +141,9 @@ ugsEditorPlus.options = {
 	 *  (string or array of strings): as an  array of strings: ["A", "G"] or comma delimited list: "A, G"
 	 * @property commonChords
 	 * @type mixed
-	 * @default see UkeGeeks.settings
+	 * @default ["A", "B", "C", "D", "E", "F", "G", "Am"]
 	 */
-	commonChords: [],
+	commonChords: ["A", "B", "C", "D", "E", "F", "G", "Am"],
 
 	/**
 	 * If TRUE, autoScroll feature will be available and shown on screen
@@ -151,9 +151,19 @@ ugsEditorPlus.options = {
 	 * Allowed values: true, false
 	 * @property autoScrollFeature
 	 * @type Boolean
-	 * @default see UkeGeeks.settings
+	 * @default true
 	 */
-	autoScrollFeature: true
+	autoScrollFeature: true,
+
+	/**
+	 * If TRUE, chords Hovering feature will be enabled
+	 * @example
+	 * Allowed values: true, false
+	 * @property chordsHovering
+	 * @type Boolean
+	 * @default false
+	 */
+	chordsHovering: false
 };
 /**
  * Does the work by providing "doAction" method to respond to events (does not
@@ -274,6 +284,9 @@ ugsEditorPlus.actions = (function() {
 			case 'toggleEnableAutoScroll':
 				setAutoScrollFeature(value);
 				break;
+			case 'toggleEnableChordsHovering':
+				setChordsHoveringFeature(value);
+				break;
 			case 'sortAlphabetical':
 				setSortAlphabetical(value);
 				runRequired = true;
@@ -309,6 +322,7 @@ ugsEditorPlus.actions = (function() {
 		setIgnoreCommon(options.ignoreCommonChords);
 		setCommonChordsList(options.commonChords);
     setAutoScrollFeature(options.autoScrollFeature);
+    setChordsHoveringFeature(options.chordsHoveringFeature);
 		setSortAlphabetical(options.sortAlphabetical);
 	};
 
@@ -656,6 +670,18 @@ ugsEditorPlus.actions = (function() {
 	var setAutoScrollFeature = function(isEnabled) {
 		ukeGeeks.settings.opts.autoScrollFeature = isEnabled;
     $('#autoScrollCtrl').toggle(isEnabled);
+	};
+
+	var setChordsHoveringFeature = function(isEnabled) {
+		ukeGeeks.settings.opts.chordsHoveringFeature = isEnabled;
+    if(isEnabled)
+    {
+      ugsEditorPlus.hoverChords.init();
+    }
+    else
+    {
+      ugsEditorPlus.hoverChords.deinit();
+    }
 	};
 
 	// ---------------------------------------
@@ -1139,6 +1165,13 @@ ugsEditorPlus.optionsDlg = (function() {
 		ele.checked = options.autoScrollFeature;
 		ele.onclick = function() {
 			triggerNotify('toggleEnableAutoScroll', this.checked);
+    };
+
+		// toggle enabling chords Hovering feature
+		ele = document.getElementById('chkEnableChordsHovering');
+		ele.checked = options.chordsHovering;
+		ele.onclick = function() {
+			triggerNotify('toggleEnableChordsHovering', this.checked);
     };
 
 		// ugh! Event bubbling!
@@ -2700,7 +2733,8 @@ ugsEditorPlus.songAmatic = (function() {
 			sortAlphabetical: ukeGeeks.settings.opts.sortAlphabetical,
 			ignoreCommonChords: ukeGeeks.settings.opts.ignoreCommonChords,
 			commonChords: ukeGeeks.settings.commonChords,
-			autoScrollFeature: ukeGeeks.settings.opts.autoScrollFeature
+			autoScrollFeature: ukeGeeks.settings.opts.autoScrollFeature,
+			chordsHovering: ukeGeeks.settings.opts.chordsHovering
 		};
 
 		return $.extend(ugsEditorPlus.options, opts, (typeof options === "object") ? options : {});
@@ -2842,6 +2876,69 @@ ugsEditorPlus.autoscroll = (function() {
     {
       window.AutoScrollTimer = setInterval('ugsEditorPlus.autoscroll.autoScroll()', _scrollSpeeds[_currentScrollSpeed]);
     }
+  }
+
+	// ------------------------
+	// return public interface 
+	// ------------------------
+	return _public;
+
+}());
+
+/**
+ * Exposes the only method required for chord hovering in Scriptasaurus Song-a-matic editor.
+ *
+ * @class hoverChords
+ * @namespace ugsEditorPlus
+ * @static
+ * @singleton
+ */
+ugsEditorPlus.hoverChords = (function() {
+
+	/**
+	 * attach public members to this object
+	 * @property _public
+	 * @type JsonObject
+	 */
+	var _public = {};
+
+	_public.init = function() {
+
+    $('#ukeSongText code em').on('mouseover', function (e) {
+
+      var $div = $('#chordsHovering');
+      var chordName = e.currentTarget.innerText;
+      var $diagram = $('#ukeChordsCanvas [data-chordname=' + chordName + ']')
+      var $chordsHoveringCanvas = $('#chordsHoveringCanvas');
+    
+      cloneCanvas($diagram[0], $chordsHoveringCanvas[0]);
+
+      // Needs to be set BEFORE changing top/left
+      $div.show();
+
+      $div.css('top', e.clientY - $div.height() - 20);
+      $div.css('left', e.clientX - ($chordsHoveringCanvas.width() / 2));
+
+      return false;
+    });
+
+    $('#ukeSongText code em').on('mouseleave', function () {
+      $('#chordsHovering').hide();
+      return false;
+    });
+
+  }
+
+	_public.deinit = function() {
+    $('#ukeSongText code em').unbind('mouseover');
+    $('#ukeSongText code em').unbind('mouseleave');
+  }
+
+  function cloneCanvas(srcCanvas, destCanvas)
+  {
+      destCanvas.width = srcCanvas.width;
+      destCanvas.height = srcCanvas.height;
+      destCanvas.getContext('2d').drawImage(srcCanvas, 0, 0);
   }
 
 	// ------------------------

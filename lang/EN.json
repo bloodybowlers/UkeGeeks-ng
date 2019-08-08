@@ -134,5 +134,7 @@
   "chord_finder" : "Chord Finder",
   "reverse_chord_finder" : "Reverse chord finder",
   "about_credits" : "About & Credits...",
-  "confirm_delete_song" : "Do you really want to DELETE this song ?!"
+  "confirm_delete_song" : "Do you really want to DELETE this song ?!",
+  "chordsHovering" : "Chords on mouse hovering",
+  "chordsHovering_descr" : "Display chords diagram on mouse hovering"
 }

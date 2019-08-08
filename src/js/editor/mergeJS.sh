@@ -22,6 +22,7 @@ ugsEditorPlus.chordBuilder.js \
 ugsEditorPlus.songAmatic.js \
 ugsEditorPlus.stickyChords.js \
 ugsEditorPlus.autoscroll.js \
+ugsEditorPlus.hoverChords.js \
 ugsChordBuilder.js \
 ugsChordBuilder.chooserList.js \
 ugsChordBuilder.reverseChordFinder.js \

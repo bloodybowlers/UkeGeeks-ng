@@ -136,5 +136,15 @@ ugsEditorPlus.options = {
 	 * @type Boolean
 	 * @default true
 	 */
-	autoScrollFeature: true
+	autoScrollFeature: true,
+
+	/**
+	 * If TRUE, chords Hovering feature will be enabled
+	 * @example
+	 * Allowed values: true, false
+	 * @property chordsHovering
+	 * @type Boolean
+	 * @default false
+	 */
+	chordsHovering: false
 };

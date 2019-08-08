@@ -315,6 +315,7 @@
   z-index: 8;
 }
 
+/*********************************************************/
 #aboutDlg {
   font-family: monospace;
 }
@@ -343,3 +344,19 @@
   margin: 20px auto 0 auto;
   width: 300px;
 }
+/*********************************************************/
+#chordsHovering {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: inset 0 0 25px #c3c3c0;
+  display: none;
+}
+#chordsHoveringCanvas {
+  height: 120px;
+  width: 80px;
+}
+/*********************************************************/

@@ -216,6 +216,12 @@ $editDlgCssClassName = $model->IsUpdateAllowed ? '' : 'isHidden';
 				<span class="checkBoxFinePrint"><?php echo Lang::Get('auto_scroll_descr')?></span>
 			</label>
 		</p>
+		<p class="checkboxBlock">
+			<input type="checkbox" value="true" id="chkEnableChordsHovering" />
+			<label for="chkEnableChordsHovering"><?php echo Lang::Get('chordsHovering')?>
+				<span class="checkBoxFinePrint"><?php echo Lang::Get('chordsHovering_descr')?></span>
+			</label>
+		</p>
 	</fieldset>
 </aside>
 <!-- HELP (DIALOG) -->
@@ -312,6 +318,9 @@ $editDlgCssClassName = $model->IsUpdateAllowed ? '' : 'isHidden';
 	</div>
 </section>
 
+<!-- CHORD HOVERING POPUP -->
+<div id="chordsHovering"><canvas id="chordsHoveringCanvas"></canvas></div>
+
 <!-- SCRIPTS -->
 <script type="text/javascript" src="<?php echo($model->StaticsPrefix); ?>js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="<?php echo($model->StaticsPrefix); ?>js/lazyload.min.js"></script>
@@ -354,6 +363,12 @@ $(function()
 
   // Setup autoscroll if needed
   ugsEditorPlus.autoscroll.init();
+
+  // Setup chords hovering
+  if(ugs_settings.chordsHovering)
+  {
+    ugsEditorPlus.hoverChords.init();
+  }
 });
 </script>
 <script type="text/javascript" src="<?php echo($model->StaticsPrefix); ?>js/ukeGeeks.scriptasaurus.merged.js"></script>

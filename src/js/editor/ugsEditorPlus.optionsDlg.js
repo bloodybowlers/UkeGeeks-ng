@@ -67,6 +67,13 @@ ugsEditorPlus.optionsDlg = (function() {
 			triggerNotify('toggleEnableAutoScroll', this.checked);
     };
 
+		// toggle enabling chords Hovering feature
+		ele = document.getElementById('chkEnableChordsHovering');
+		ele.checked = options.chordsHovering;
+		ele.onclick = function() {
+			triggerNotify('toggleEnableChordsHovering', this.checked);
+    };
+
 		// ugh! Event bubbling!
 		$('.checkboxBlock label, input[type=checkbox]').click(function(e) {
 			e.stopPropagation();

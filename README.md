@@ -10,25 +10,25 @@ UkeGeeks is a songbook editor for ukulele originally created by [Buz Carter](htt
 
 ### What's changed so far :
 
-#### Major features/changes
+#### Major features / changes
 
 - Chords now **stay on top** when **scrolling** a song
 - Added a **DELETE SONG** button to the EDITOR
 - Added **Auto-Scrolling** of song
-- Added a **SONGBOOK** button when viewing a song (to go back)
+- Added **display of chord** diagram on **mouse hovering**
 - **Sorted the song list** by artist and song name + layout change for better search
-- Removed **legacy browser** support
 - Added full **TRANSLATION support**. Currently :
   - ENGLISH
   - FRENCH
   - GERMAN (thanks to Louis-Coding)
   - (you can contribute :p)
-- Removed 'no detailed list' and 'no editable song' mode. We want full functionality, all the time
 - **Chord Finder** and **Reverse Chord Finder** (from UkeGeeks website 'tool' source code)
+- Removed **legacy browser** support
 
 #### Improvements, small fixes, QoL changes
 
 - Removed the **edit** button if **no write access** allowed
+- Added a **SONGBOOK** button when viewing a song (to go back)
 - Added some missing **chords**
 - Proper **404 handling** (on **page** missing and on **song** missing)
 - **Non-intrusive popup** on missing chords
@@ -39,6 +39,7 @@ UkeGeeks is a songbook editor for ukulele originally created by [Buz Carter](htt
 - Made the advanced editor link more obvious + help displayed on startup
 - Added a back to top button on the song list
 - Removed the StaticsPrefix const from the config file. Now it's handled automagically
+- Removed 'no detailed list' and 'no editable song' mode. We want full functionality, all the time
 
 _______________________________________________________
 # Installation
