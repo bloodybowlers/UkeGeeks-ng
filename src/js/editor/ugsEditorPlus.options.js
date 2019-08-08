@@ -80,12 +80,12 @@ ugsEditorPlus.options = {
 	/**
 	 * Ukulele tuning ("instrument") for drawing diagrams.
 	 * @example
-	 *  Allowed values: soprano or baritone
+	 *  Allowed values: standard or baritone
 	 * @property tuning
 	 * @type Text
-	 * @default soprano
+	 * @default standard
 	 */
-	tuning: "soprano",
+	tuning: "standard",
 
 	/**
 	 * Show/hide the square brackets around chord names within lyrics, ex: [Am]

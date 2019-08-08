@@ -88,7 +88,7 @@ ugsChordBuilder.reverseFinder = function() {
   };
 
   var preloadNotes = function() {
-    ukeGeeks.definitions.addInstrument(ukeGeeks.definitions.sopranoUkuleleGcea);
+    ukeGeeks.definitions.addInstrument(ukeGeeks.definitions.standardUkuleleGcea);
     ukeGeeks.definitions.useInstrument();
     var definitions = ukeGeeks.definitions.getChords();
     _chordDictionary = [];

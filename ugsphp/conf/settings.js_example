@@ -38,9 +38,9 @@
 	// "theme": "normal",
 
 	/* Ukulele tuning ("instrument") for drawing diagrams.
-	 * Allowed values (text): soprano or baritone
+	 * Allowed values (text): standard or baritone
 	 */
-	// "tuning": "soprano",
+	// "tuning": "standard",
 
 	/* Show/hide the square brackets around chord names within lyrics, ex: [Am]
 	 * Allowed values: true, false

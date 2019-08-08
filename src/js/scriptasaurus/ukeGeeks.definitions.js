@@ -29,13 +29,13 @@ ukeGeeks.definitions = (function() {
 	var _map = [];
 
 	/**
-	 * Enum (simple JSON name/value pairs) defining instrument tunings (offsets from standard Soprano Ukulele)
+	 * Enum (simple JSON name/value pairs) defining instrument tunings (offsets from standard Ukulele)
 	 * @property instrument
 	 * @type JSON
 	 */
 	_public.instrument = {
-		sopranoUke: 0, // GCEA
-		baritoneUke: 5 // DGBA -- Baritone's "A" fingering is the Soprano's "D"
+		standardUke: 0, // GCEA
+		baritoneUke: 5 // DGBA -- Baritone's "A" fingering is the standard's "D"
 	};
 	
 	/* PUBLIC METHODS
@@ -62,7 +62,7 @@ ukeGeeks.definitions = (function() {
 	 * @return {void}
 	 */
 	_public.useInstrument = function(offset) {
-		offset = (arguments.length > 0) ? offset : _public.instrument.sopranoUke;
+		offset = (arguments.length > 0) ? offset : _public.instrument.standardUke;
 		_offset = parseInt(offset, 10);
 		if (_offset > 0){
 			_map = ukeGeeks.transpose.retune(_offset);

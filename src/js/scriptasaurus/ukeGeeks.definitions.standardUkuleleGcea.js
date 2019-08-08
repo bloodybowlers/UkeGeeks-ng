@@ -1,13 +1,13 @@
 // -------------------------------------------------------
-// Scriptasaurus preloads Soprano Uke chord dictionary.
+// Scriptasaurus preloads standard Uke chord dictionary.
 // Unusual array joined to make multi-lined super string
 // being used to avoid JsLint warnings about JS string
 // continuation character: \
 // -------------------------------------------------------
-ukeGeeks.definitions.sopranoUkuleleGcea = [
+ukeGeeks.definitions.standardUkuleleGcea = [
 	// Required: Instruement Name and Tuning (string names)
 	// -------------------------------------------------------
-	'{instrument: Soprano Ukulele}',
+	'{instrument: Standard Ukulele}',
 	'{tuning: G C E A}',
 	//  Ab returns G#
 	//  A

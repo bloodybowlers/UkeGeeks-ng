@@ -29,7 +29,7 @@ ugsChordBuilder.chordFinder = function() {
     addChordTypeOptions(ele);
     ele.addEventListener('change', onChordTypeChange, false);
 
-    ukeGeeks.definitions.addInstrument(ukeGeeks.definitions.sopranoUkuleleGcea);
+    ukeGeeks.definitions.addInstrument(ukeGeeks.definitions.standardUkuleleGcea);
     ukeGeeks.definitions.useInstrument();
 
     ugsChordBuilder.chordCanvas.init(_context, _canvas);

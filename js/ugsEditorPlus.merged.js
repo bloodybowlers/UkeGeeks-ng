@@ -97,12 +97,12 @@ ugsEditorPlus.options = {
 	/**
 	 * Ukulele tuning ("instrument") for drawing diagrams.
 	 * @example
-	 *  Allowed values: soprano or baritone
+	 *  Allowed values: standard or baritone
 	 * @property tuning
 	 * @type Text
-	 * @default soprano
+	 * @default standard
 	 */
-	tuning: "soprano",
+	tuning: "standard",
 
 	/**
 	 * Show/hide the square brackets around chord names within lyrics, ex: [Am]
@@ -484,8 +484,8 @@ ugsEditorPlus.actions = (function() {
 	 * @param value {string} value of the clicked value item
 	 */
 	var doTuning = function(value){
-		var tuning = ukeGeeks.definitions.instrument.sopranoUke,
-			msg = 'Standard <strong>GCEA</strong> Soprano Ukulele';
+		var tuning = ukeGeeks.definitions.instrument.standardUke,
+			msg = 'Standard <strong>GCEA</strong> Standard Ukulele';
 
 		if (value == 'baritone') {
 			tuning = ukeGeeks.definitions.instrument.baritoneUke;
@@ -4296,7 +4296,7 @@ ugsChordBuilder.reverseFinder = function() {
   };
 
   var preloadNotes = function() {
-    ukeGeeks.definitions.addInstrument(ukeGeeks.definitions.sopranoUkuleleGcea);
+    ukeGeeks.definitions.addInstrument(ukeGeeks.definitions.standardUkuleleGcea);
     ukeGeeks.definitions.useInstrument();
     var definitions = ukeGeeks.definitions.getChords();
     _chordDictionary = [];
@@ -4429,7 +4429,7 @@ ugsChordBuilder.chordFinder = function() {
     addChordTypeOptions(ele);
     ele.addEventListener('change', onChordTypeChange, false);
 
-    ukeGeeks.definitions.addInstrument(ukeGeeks.definitions.sopranoUkuleleGcea);
+    ukeGeeks.definitions.addInstrument(ukeGeeks.definitions.standardUkuleleGcea);
     ukeGeeks.definitions.useInstrument();
 
     ugsChordBuilder.chordCanvas.init(_context, _canvas);

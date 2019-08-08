@@ -23,10 +23,10 @@ ukeGeeks.scriptasaurus = (function() {
 	_public.init = function() {
 		var defs = ukeGeeks.definitions;
 
-		// TODO: known problem -- need to preload Sorprano chord libarary then we can retune if needed
-		defs.addInstrument(defs.sopranoUkuleleGcea);
-		defs.useInstrument(defs.instrument.sopranoUke);
-		if (ukeGeeks.settings.defaultInstrument != defs.instrument.sopranoUke) {
+		// TODO: known problem -- need to preload standard chord library then we can retune if needed
+		defs.addInstrument(defs.standardUkuleleGcea);
+		defs.useInstrument(defs.instrument.standardUke);
+		if (ukeGeeks.settings.defaultInstrument != defs.instrument.standardUke) {
 			defs.useInstrument(ukeGeeks.settings.defaultInstrument);
 		}
 	};

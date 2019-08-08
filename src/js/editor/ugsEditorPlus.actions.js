@@ -327,8 +327,8 @@ ugsEditorPlus.actions = (function() {
 	 * @param value {string} value of the clicked value item
 	 */
 	var doTuning = function(value){
-		var tuning = ukeGeeks.definitions.instrument.sopranoUke,
-			msg = 'Standard <strong>GCEA</strong> Soprano Ukulele';
+		var tuning = ukeGeeks.definitions.instrument.standardUke,
+			msg = 'Standard <strong>GCEA</strong> Standard Ukulele';
 
 		if (value == 'baritone') {
 			tuning = ukeGeeks.definitions.instrument.baritoneUke;

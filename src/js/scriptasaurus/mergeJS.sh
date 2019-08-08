@@ -9,7 +9,7 @@ ukeGeeks.data.js \
 ukeGeeks.toolsLite.js \
 ukeGeeks.chordImport.js \
 ukeGeeks.transpose.js \
-ukeGeeks.definitions.sopranoUkuleleGcea.js \
+ukeGeeks.definitions.standardUkuleleGcea.js \
 ukeGeeks.canvasTools.js \
 ukeGeeks.chordBrush.js \
 ukeGeeks.chordParser.js \

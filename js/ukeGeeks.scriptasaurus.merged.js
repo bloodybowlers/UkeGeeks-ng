@@ -49,13 +49,13 @@ ukeGeeks.definitions = (function() {
 	var _map = [];
 
 	/**
-	 * Enum (simple JSON name/value pairs) defining instrument tunings (offsets from standard Soprano Ukulele)
+	 * Enum (simple JSON name/value pairs) defining instrument tunings (offsets from standard Ukulele)
 	 * @property instrument
 	 * @type JSON
 	 */
 	_public.instrument = {
-		sopranoUke: 0, // GCEA
-		baritoneUke: 5 // DGBA -- Baritone's "A" fingering is the Soprano's "D"
+		standardUke: 0, // GCEA
+		baritoneUke: 5 // DGBA -- Baritone's "A" fingering is the standard's "D"
 	};
 	
 	/* PUBLIC METHODS
@@ -82,7 +82,7 @@ ukeGeeks.definitions = (function() {
 	 * @return {void}
 	 */
 	_public.useInstrument = function(offset) {
-		offset = (arguments.length > 0) ? offset : _public.instrument.sopranoUke;
+		offset = (arguments.length > 0) ? offset : _public.instrument.standardUke;
 		_offset = parseInt(offset, 10);
 		if (_offset > 0){
 			_map = ukeGeeks.transpose.retune(_offset);
@@ -212,7 +212,8 @@ ukeGeeks.definitions = (function() {
 	};
 	
 	return _public;
-}());/**
+}());
+/**
  * Customize your installation. This JSON object controls appearance and
  * HTML element names. It's divided into four sections: graphics, ids, layout,
  * and "options".
@@ -430,7 +431,7 @@ ukeGeeks.settings = (function() {
 	_public.numFrets = 5;
 
 	/**
-	 * Array of string names, changes between baritone and soprano
+	 * Array of string names, changes between baritone and standard
 	 * @property tuning
 	 * @type string Array
 	 */
@@ -441,7 +442,7 @@ ukeGeeks.settings = (function() {
 	 * @property defaultInstrument
 	 * @type {enum_int}
 	 */
-	_public.defaultInstrument = ukeGeeks.definitions.instrument.sopranoUke;
+	_public.defaultInstrument = ukeGeeks.definitions.instrument.standardUke;
 
 	/**
 	 * TODO: Clean-up Tab Options!!
@@ -1335,15 +1336,15 @@ ukeGeeks.transpose = (function() {
 	return _public;
 
 }());// -------------------------------------------------------
-// Scriptasaurus preloads Soprano Uke chord dictionary.
+// Scriptasaurus preloads standard Uke chord dictionary.
 // Unusual array joined to make multi-lined super string
 // being used to avoid JsLint warnings about JS string
 // continuation character: \
 // -------------------------------------------------------
-ukeGeeks.definitions.sopranoUkuleleGcea = [
+ukeGeeks.definitions.standardUkuleleGcea = [
 	// Required: Instruement Name and Tuning (string names)
 	// -------------------------------------------------------
-	'{instrument: Soprano Ukulele}',
+	'{instrument: Standard Ukulele}',
 	'{tuning: G C E A}',
 	//  Ab returns G#
 	//  A
@@ -3344,10 +3345,10 @@ ukeGeeks.scriptasaurus = (function() {
 	_public.init = function() {
 		var defs = ukeGeeks.definitions;
 
-		// TODO: known problem -- need to preload Sorprano chord libarary then we can retune if needed
-		defs.addInstrument(defs.sopranoUkuleleGcea);
-		defs.useInstrument(defs.instrument.sopranoUke);
-		if (ukeGeeks.settings.defaultInstrument != defs.instrument.sopranoUke) {
+		// TODO: known problem -- need to preload standard chord library then we can retune if needed
+		defs.addInstrument(defs.standardUkuleleGcea);
+		defs.useInstrument(defs.instrument.standardUke);
+		if (ukeGeeks.settings.defaultInstrument != defs.instrument.standardUke) {
 			defs.useInstrument(ukeGeeks.settings.defaultInstrument);
 		}
 	};

@@ -216,7 +216,7 @@ ukeGeeks.settings = (function() {
 	_public.numFrets = 5;
 
 	/**
-	 * Array of string names, changes between baritone and soprano
+	 * Array of string names, changes between baritone and standard
 	 * @property tuning
 	 * @type string Array
 	 */
@@ -227,7 +227,7 @@ ukeGeeks.settings = (function() {
 	 * @property defaultInstrument
 	 * @type {enum_int}
 	 */
-	_public.defaultInstrument = ukeGeeks.definitions.instrument.sopranoUke;
+	_public.defaultInstrument = ukeGeeks.definitions.instrument.standardUke;
 
 	/**
 	 * TODO: Clean-up Tab Options!!

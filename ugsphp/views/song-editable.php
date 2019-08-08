@@ -166,10 +166,10 @@ $editDlgCssClassName = $model->IsUpdateAllowed ? '' : 'isHidden';
 					<li><a href="#up_6">+6 <em>F#</em></a></li>
 				</ul>
 			</dd>
-			<dt><label for="tuningPicker"><span>Soprano ukulele tuning</span> <em>&#9658;</em></label></dt>
+			<dt><label for="tuningPicker"><span>Standard ukulelee tuning</span> <em>&#9658;</em></label></dt>
 			<dd id="tuningPicker" data-action="tuning">
 				<ul class="pseudoSelect">
-					<li class="checked"><a href="#soprano"><?php echo Lang::Get('standard_tun')?></a></li>
+					<li class="checked"><a href="#standard"><?php echo Lang::Get('standard_tun')?></a></li>
 					<li><a href="#baritone"><?php echo Lang::Get('baritone_tun')?></a></li>
 				</ul>
 			</dd>
