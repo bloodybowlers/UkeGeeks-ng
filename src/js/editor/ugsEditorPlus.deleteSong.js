@@ -40,7 +40,7 @@ ugsEditorPlus.deleteSong = (function() {
 		_filename = filename;
 
 		$(_selectors.button).click(function(event) {
-      if( !confirm( "Do you REALLY want to DELETE this song ?" ) ) {  return false; }
+      if( !confirm( ugs_il8n.confirm_delete_song ) ) {  return false; }
 			doDelete();
 			return false;
 		});

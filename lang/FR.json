@@ -133,5 +133,6 @@
   "also_uses" : "Utilise aussi",
   "chord_finder" : "Recherche d'accords",
   "reverse_chord_finder" : "Recherche d'accord inversée",
-  "about_credits" : "A propos..."
+  "about_credits" : "A propos...",
+  "confirm_delete_song" : "Voulez-vous vraiment SUPPRIMER cette chanson ?!"
 }
