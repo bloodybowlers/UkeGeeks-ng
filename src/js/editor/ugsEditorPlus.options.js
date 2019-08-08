@@ -13,9 +13,9 @@ ugsEditorPlus.options = {
 	 *  Allowed values: true, false
 	 * @property showEditOnLoad
 	 * @type Boolean
-	 * @default true
+	 * @default false
 	 */
-	showEditOnLoad: true,
+	showEditOnLoad: false,
 
 	/**
 	 * Lyric's font size (pts)
@@ -33,9 +33,9 @@ ugsEditorPlus.options = {
 	 *  Allowed values: 40 ("tiny"), 65 ("small"), 80 ("medium"), 90 ("large"), 100 ("x-large")
 	 * @property diagramSize
 	 * @type Integer
-	 * @default 100
+	 * @default 80
 	 */
-	diagramSize: 100,
+	diagramSize: 80,
 
 	/**
 	 * Specify where reference diagrams should be show
@@ -43,9 +43,9 @@ ugsEditorPlus.options = {
 	 *  Allowed values: left, top, or none
 	 * @property diagramPosition
 	 * @type Text
-	 * @default left
+	 * @default top
 	 */
-	diagramPosition: "left",
+	diagramPosition: "top",
 
 	/**
 	 * Specify how chord names within lyrics should be shown
@@ -63,9 +63,9 @@ ugsEditorPlus.options = {
 	 *  Allowed values: letter, a4, screen
 	 * @property paper
 	 * @type Text
-	 * @default letter
+	 * @default a4
 	 */
-	paper: "letter",
+	paper: "a4",
 
 	/**
 	 * Theme shortname applied on page load.
@@ -93,9 +93,9 @@ ugsEditorPlus.options = {
 	 *  Allowed values: true, false
 	 * @property hideChordEnclosures
 	 * @type Boolean
-	 * @default see UkeGeeks.settings
+	 * @default true
 	 */
-	hideChordEnclosures: false,
+	hideChordEnclosures: true,
 
 	/**
 	 * Order in which reference diagrams are sorted, either alphabetically (true) or order
@@ -104,7 +104,7 @@ ugsEditorPlus.options = {
 	 * Allowed values: true, false
 	 * @property sortAlphabetical
 	 * @type Boolean
-	 * @default see UkeGeeks.settings
+	 * @default false
 	 */
 	sortAlphabetical: false,
 
@@ -114,7 +114,7 @@ ugsEditorPlus.options = {
 	 * Allowed values: true, false
 	 * @property ignoreCommonChords
 	 * @type Boolean
-	 * @default see UkeGeeks.settings
+	 * @default false
 	 */
 	ignoreCommonChords: false,
 
@@ -124,9 +124,9 @@ ugsEditorPlus.options = {
 	 *  (string or array of strings): as an  array of strings: ["A", "G"] or comma delimited list: "A, G"
 	 * @property commonChords
 	 * @type mixed
-	 * @default see UkeGeeks.settings
+	 * @default ["A", "B", "C", "D", "E", "F", "G", "Am"]
 	 */
-	commonChords: [],
+	commonChords: ["A", "B", "C", "D", "E", "F", "G", "Am"],
 
 	/**
 	 * If TRUE, autoScroll feature will be available and shown on screen
@@ -134,7 +134,7 @@ ugsEditorPlus.options = {
 	 * Allowed values: true, false
 	 * @property autoScrollFeature
 	 * @type Boolean
-	 * @default see UkeGeeks.settings
+	 * @default true
 	 */
 	autoScrollFeature: true
 };

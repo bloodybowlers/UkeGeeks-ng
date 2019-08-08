@@ -4,67 +4,80 @@
 
 	/* If true the Edit Song box is shown when the page loads; false hides it.
 	 * Allowed values: true, false
+   * Default : false
 	 */
-	// "showEditOnLoad": true,
+	// "showEditOnLoad": false,
 
 	/* Lyric's font size (pts)
 	 * Allowed values (number): 6, 6.5, 7, 7.5, 8, 8.5, 9, 10, 11, 12, 13, 14
+   * Default : 12
 	 */
 	// "fontSize": 12,
 
 	/* Reference diagram size expressed as a percentage (100% being max)
 	 * Allowed values (integer): 40 ("tiny"), 65 ("small"), 80 ("medium"), 90 ("large"), 100 ("x-large")
+   * Default : 80
 	 */
-	// "diagramSize": 100,
+	// "diagramSize": 80,
 
 	/* Specify where reference diagrams should be shown
 	 * Allowed values (text): left, top, or none
+   * Default : top
 	 */
-	// "diagramPosition": "left",
+	// "diagramPosition": "top",
 
 	/* Specify how chord names within lyrics should be shown
 	 * Allowed values (text): inline, above, or miniDiagrams
+   * Default : above
 	 */
 	// "lyricStyle": "above",
 
 	/* Specify page width (mock paper)
 	 * Allowed values (text): letter, a4, screen
+   * Default : a4
 	 */
-	// "paper": "letter",
+	// "paper": "a4",
 
 	/* Theme shortname applied on page load.
 	 * Allowed values (text): frosty, jellyBean, jellyMono, justBlack, krampus, normal, notebook, pumpkin, reversed, western, zombie
+   * Default : normal
 	 */
 	// "theme": "normal",
 
 	/* Ukulele tuning ("instrument") for drawing diagrams.
 	 * Allowed values (text): standard or baritone
+   * Default : standard
 	 */
 	// "tuning": "standard",
 
 	/* Show/hide the square brackets around chord names within lyrics, ex: [Am]
 	 * Allowed values: true, false
+   * Default : true
 	 */
 	// "hideChordEnclosures": true,
 
 	/* Order in which reference diagrams are sorted, either alphabetically (true) or order
 	 * in which they appear within the song (false).
 	 * Allowed values: true, false
+   * Default : false
 	 */
 	// "sortAlphabetical": false,
 
 	/* If TRUE chords in the "commonChords" list will be ignored (excluded from reference chord diagrams)
 	 * Allowed values: true, false
+   * Default : false
 	 */
 	// "ignoreCommonChords": false,
 
 	/* Array of chords to be ignored when drawing reference diagrams (if "ignoreCommonChords" is enabled)
 	 * Allowed values (string or array of strings): as an  array of strings: ["A", "G"] or comma delimited list: "A, G"
+   * Default : ["A", "B", "C", "D", "E", "F", "G", "Am"]
 	 */
 	// "commonChords": ["A", "B", "C", "D", "E", "F", "G", "Am"]
 
 	/* Enable/disable the autoscroll feature
 	 * Allowed values : true, false
+   * Default : true
 	 */
 	// "autoScrollFeature": true
 }
