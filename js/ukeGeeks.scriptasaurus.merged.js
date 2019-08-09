@@ -2126,10 +2126,6 @@ ukeGeeks.cpmParser = function() {
 		if (tmp.length > 0) {
 			song.key = tmp[0];
 		}
-		else if (_firstChord !== '') {
-			// Setting Key to first chord found
-			song.key = _firstChord;
-		}
 		// Chord Definitions
 		tmp = _getInfo(songDom, _blockTypeEnum.ChordDefinition);
 		if (tmp.length > 0){
@@ -2550,7 +2546,8 @@ ukeGeeks.cpmParser = function() {
 
 	/* return our public interface */
 	return _public;
-};/**
+};
+/**
  * Draws large chord diagram grid (aka "reference" diagrams) on canvas
  * @class chordPainter
  * @namespace ukeGeeks

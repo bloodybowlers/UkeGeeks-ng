@@ -5,6 +5,7 @@ class SongLinkPlus_Pvm {
 	public $Title = '';
 	public $Subtitle = '';
 	public $Album = '';
+	public $Key = '';
 	public $Artist = '';
 	public $HasInfo = false;
 }

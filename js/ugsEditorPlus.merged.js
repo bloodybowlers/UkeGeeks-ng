@@ -356,7 +356,7 @@ ugsEditorPlus.actions = (function() {
 			if (isDoBackup || (_originalSource === null)) {
 				_originalSource = _ele.cpmSource.value;
 				_originalChords = _song.chords;
-				var key = _song.key !== '' ? _song.key : (_song.chords.length < 1 ? '' : _song.chords[0]);
+				var key = _song.key;
 				resetTranspose(key);
 			}
 		}
@@ -703,22 +703,6 @@ ugsEditorPlus.songUi = (function() {
 	 */
 	var _public = {};
 
-	/**
-	 * Sets an element's Inner HTML and sets visibility based on whether the value is empty (or not)
-	 * @method trySet
-	 * @private
-	 * @param id {string} element's Id
-	 * @param value {string} content value
-	 */
-	var trySet = function(id, value){
-		var hasValue = value && (value.length > 0);
-		var h = document.getElementById(id);
-		if (!h){
-			return;
-		}
-		h.innerHTML = hasValue ? value : "";
-		h.style.display = hasValue ? 'block' : 'none';
-	};
 
  /**
 	 * Update various HTML parts (H1 &amp; H2 etc.) using TEXT values of Song
@@ -730,9 +714,13 @@ ugsEditorPlus.songUi = (function() {
 		var h = document.getElementById('songTitle');
 		h.innerHTML = (song.title.length > 0) ? song.title : 'Untitled-Song';
 
-		trySet('songArtist', song.artist);
-		trySet('songAlbum', song.album);
-		trySet('songSubtitle', song.st);
+		$('#songArtist').html(song.artist);
+		$('#songAlbum').html(song.album);
+    if(song.key != '')
+      $('#songKey').html('Key : ' + song.key);
+    else
+      $('#songKey').html('');
+		$('#songSubtitle').html(song.st);
 
 		h = document.getElementById('songMeta');
 		if (!song.ugsMeta || (song.ugsMeta.length < 1)){

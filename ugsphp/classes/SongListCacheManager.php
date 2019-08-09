@@ -68,6 +68,7 @@ class SongListCacheManager {
 			$song->Title = ((strlen($parsed->title) > 0) ? $parsed->title : $this->filenameToTitle($s));
 			$song->Subtitle = $parsed->subtitle;
 			$song->Album = $parsed->album;
+			$song->Key = $parsed->key;
 			$song->Artist = $parsed->artist;
 
 			$list->SongList[] = $song;

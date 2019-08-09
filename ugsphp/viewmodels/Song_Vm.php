@@ -4,6 +4,7 @@ class Song_Vm extends _base_Vm {
 	public $SongTitle = '';
 	public $Subtitle = '';
 	public $Album = '';
+	public $Key = '';
 	public $Artist = '';
 	public $Body = '';
 	public $UgsMeta = null;

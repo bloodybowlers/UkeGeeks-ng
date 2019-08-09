@@ -100,10 +100,6 @@ ukeGeeks.cpmParser = function() {
 		if (tmp.length > 0) {
 			song.key = tmp[0];
 		}
-		else if (_firstChord !== '') {
-			// Setting Key to first chord found
-			song.key = _firstChord;
-		}
 		// Chord Definitions
 		tmp = _getInfo(songDom, _blockTypeEnum.ChordDefinition);
 		if (tmp.length > 0){

@@ -189,7 +189,7 @@ ugsEditorPlus.actions = (function() {
 			if (isDoBackup || (_originalSource === null)) {
 				_originalSource = _ele.cpmSource.value;
 				_originalChords = _song.chords;
-				var key = _song.key !== '' ? _song.key : (_song.chords.length < 1 ? '' : _song.chords[0]);
+				var key = _song.key;
 				resetTranspose(key);
 			}
 		}
