@@ -15,7 +15,7 @@ $editDlgCssClassName = $model->IsUpdateAllowed ? '' : 'isHidden';
 <link rel="stylesheet" href="<?php echo($model->StaticsPrefix); ?>css/yuiReset.css" />
 <link rel="stylesheet" href="<?php echo($model->StaticsPrefix); ?>css/basic-page-layout.css" />
 <link rel="stylesheet" href="<?php echo($model->StaticsPrefix); ?>css/ukeGeeks.music.css" />
-<link rel="stylesheet" href="<?php echo($model->StaticsPrefix); ?>css/ugsEditorPlus.merged.css" title="ugsEditorCss" />
+<link rel="stylesheet" href="<?php echo($model->StaticsPrefix); ?>css/ugsEditorPlus.css" title="ugsEditorCss" />
 <link rel="stylesheet" href="<?php echo($model->StaticsPrefix); ?>css/ugsEditorPlus.print.css" media="print" />
 </head>
 <body class="editableSongPage pageWidth_screen" style="display: none;">

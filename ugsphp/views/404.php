@@ -7,7 +7,7 @@
 	<meta charset="utf-8" />
   <title><?php echo($model->PageTitle); ?> | <?php echo Config::SongbookHeadline?></title>
 	<meta name="generator" content="<?php echo($model->PoweredBy) ?>" />
-	<link rel="stylesheet" href="<?php echo($model->StaticsPrefix); ?>css/ugsEditorPlus.merged.css" title="ugsEditorCss" />
+	<link rel="stylesheet" href="<?php echo($model->StaticsPrefix); ?>css/ugsEditorPlus.css" title="ugsEditorCss" />
 	<link rel="stylesheet" href="<?php echo($model->StaticsPrefix); ?>css/ugsphp.css" />
 </head>
 <body>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title><?php echo $model->PageTitle; ?> | <?php echo Config::SongbookHeadline?></title>
-	<link rel="stylesheet" href="<?php echo($model->StaticsPrefix); ?>css/ugsEditorPlus.merged.css" />
+	<link rel="stylesheet" href="<?php echo($model->StaticsPrefix); ?>css/ugsEditorPlus.css" />
 	<link rel="stylesheet" href="<?php echo($model->StaticsPrefix); ?>css/ugsphp.css" />
 	<link rel="stylesheet" href="<?php echo($model->StaticsPrefix); ?>css/chordEditorBeta.css" />
   <meta name="viewport" content="width=device-width" />

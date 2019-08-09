@@ -1,10 +1,14 @@
-/*! UkeGeeks Songbook Editor page
- * Author: Buz Carter
- * Engine: LessCSS
+/*
+ * UkeGeeks-NG
  */
-.salt_oct14_880X7J {
-	color: #f00;
-}
+
+
+
+/**********************************************
+ *
+ * ARROW BOX
+ *
+ **********************************************/
 .arrowBox {
 	background-color: rgba(0,0,0,0.81);
 	border: 2px solid #fff;
@@ -201,6 +205,14 @@ html .active label {
 	height: 100%;
 	padding: 0.2em;
 }
+
+
+
+/**********************************************
+ *
+ * BUTTONS
+ *
+ **********************************************/
 .baseBtn {
 	background-color: #999;
 	border: 1px solid #333;
@@ -298,6 +310,15 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff47a20', end
 .noThanks:hover {
 	background-color: #f2e2c1;
 }
+
+
+
+
+/**********************************************
+ *
+ * CHORD BUILDER
+ *
+ **********************************************/
 .chordBuilderDlg input[type=text] {
 	border: 1px solid #d7d7d7;
 	border-radius: 5px 5px 5px 5px;
@@ -596,6 +617,17 @@ html .arrowDown {
 	float: right;
 	margin-right: 10px;
 }
+
+
+
+
+
+
+/**********************************************
+ *
+ * MENU BAR
+ *
+ **********************************************/
 html, body {
 	margin: 0;
 	padding: 0;
@@ -730,6 +762,16 @@ body {
 .navOptions.active span, .navOptions a:hover span {
 	background-position: -200px -50px;
 }
+
+
+
+
+
+/**********************************************
+ *
+ * OVERLAY
+ *
+ **********************************************/
 .overlay {
 	position: fixed;
 	top: 45px;
@@ -933,6 +975,13 @@ html .reformatDlg textarea {
 	left: 80%;
 }
 
+
+
+/**********************************************
+ *
+ * AUTOSCROLL FEATURE
+ *
+ **********************************************/
 #autoScrollCtrl {
   position: fixed;
   bottom: 0%;
@@ -959,6 +1008,12 @@ html .reformatDlg textarea {
 
 
 
+
+/**********************************************
+ *
+ * THEMES
+ *
+ **********************************************/
 .theme-reversed {
 	background-color: #000;
 	color: #fff;
@@ -1307,6 +1362,14 @@ html .reformatDlg textarea {
 .theme-justBlack .scalablePrintArea hgroup {
 	text-align: center;
 }
+
+
+
+/**********************************************
+ *
+ * SONG
+ *
+ **********************************************/
 .scalablePrintArea {
 	-moz-transform-origin: 0 0;
 	-webkit-transform-origin: 0 0;
@@ -1368,6 +1431,15 @@ html .diagramsOnTop .ugs-source-wrap {
 .scalablePrintArea .ugs-source-wrap {
 	zoom: 1;
 }
+
+
+
+
+/**********************************************
+ *
+ * ACE EDITOR
+ *
+ **********************************************/
 .aceEditorActive, .aceEditorActive body {
 	overflow: hidden;
 	height: 100%;
