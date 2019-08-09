@@ -366,5 +366,21 @@
   color: black;
   font-style: italic;
   text-align: right;
+  text-transform: capitalize;
+}
+
+#songTitle {
+  text-transform: capitalize;
+}
+#songArtist {
+  text-transform: capitalize;
+}
+#songAlbum {
+  text-transform: capitalize;
+}
+#songSubtitle {
+  font-style: italic;
+  font-size: 0.8em !important;
+  text-transform: capitalize;
 }
 
