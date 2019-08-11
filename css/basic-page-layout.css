@@ -57,6 +57,8 @@ footer{
 	color:#666666;
 	font-size:0.82em;
 	padding-top:1.6em;
+	font-style: italic;
+	text-align: center;
 }
 footer small{
 	border-left:solid 1px #b2b2b2;
