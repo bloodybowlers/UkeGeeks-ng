@@ -1352,7 +1352,10 @@ html .reformatDlg textarea {
 	font-style: normal;
 }
 .theme-justBlack .ugsChords code em {
-	color: #000;
+	/*color: #000;*/
+	color: #fff;
+	background: #555;
+	padding: 0 0.2em;
 	font-weight: bold;
 }
 .theme-justBlack .scalablePrintArea hgroup, .theme-justBlack .scalablePrintArea hgroup * {
