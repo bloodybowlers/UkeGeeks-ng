@@ -17,8 +17,16 @@
 	.ugsAppMenuBar,
 	.arrowBox,
 	.isHidden,
-	.overlay, 
+	.overlay,
 	#autoScrollCtrl {
 		display: none !important;
 	}
+	aside.chordsAlwaysOnTop {
+		position: static;
+		top: 0px;
+		background-color: none;
+		border-radius: none;
+		box-shadow: none;
+	}
+
 }
