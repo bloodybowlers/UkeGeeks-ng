@@ -22,6 +22,7 @@ ukeGeeks.definitions = (function() {
 	var _userChords = [];
 
 	var _chords = [];
+	var _Altchords = [];
 	
 	var _instruments = [];
 	
@@ -67,7 +68,9 @@ ukeGeeks.definitions = (function() {
 		if (_offset > 0){
 			_map = ukeGeeks.transpose.retune(_offset);
 		}
+
 		_public.setChords(ukeGeeks.chordImport.runBlock(_instruments[0]).chords);
+		_public.setAltChords(ukeGeeks.chordImport.runBlock(ukeGeeks.chordImport.alt2def(_instruments[0])).chords);
 	};
 	
 	/**
@@ -189,6 +192,10 @@ ukeGeeks.definitions = (function() {
 	
 	_public.setChords = function(value) {
 		_chords = value;
+	};
+
+	_public.setAltChords = function(value) {
+		_Altchords = value;
 	};
 	
 	return _public;

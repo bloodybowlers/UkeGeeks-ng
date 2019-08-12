@@ -42,6 +42,7 @@ ukeGeeks.definitions = (function() {
 	var _userChords = [];
 
 	var _chords = [];
+	var _Altchords = [];
 	
 	var _instruments = [];
 	
@@ -87,7 +88,9 @@ ukeGeeks.definitions = (function() {
 		if (_offset > 0){
 			_map = ukeGeeks.transpose.retune(_offset);
 		}
+
 		_public.setChords(ukeGeeks.chordImport.runBlock(_instruments[0]).chords);
+		_public.setAltChords(ukeGeeks.chordImport.runBlock(ukeGeeks.chordImport.alt2def(_instruments[0])).chords);
 	};
 	
 	/**
@@ -209,6 +212,10 @@ ukeGeeks.definitions = (function() {
 	
 	_public.setChords = function(value) {
 		_chords = value;
+	};
+
+	_public.setAltChords = function(value) {
+		_Altchords = value;
 	};
 	
 	return _public;
@@ -892,6 +899,7 @@ ukeGeeks.chordImport = (function() {
 	var regEx = {
 		// first pass filters
 		define: /\s*{?define\s*:(.*?)(}|add:)/i,
+		alternate: /\s*{?x_UGNG_alternate\s*:(.*?)(}|add:)/i,
 		add: /(add:.*?)(}|add:)/i,
 		// chord building filters
 		name : /(\S+)\s+/,
@@ -1203,9 +1211,32 @@ ukeGeeks.chordImport = (function() {
 		);
 	};
 
+  /**
+   * Return the chordPro markup after doing those 2 changes :
+   * 1) removing 'define:' tags
+   * 2) converting 'x_UGNG_alternate:' tags to 'define:' tags
+   *
+   * This is a very hacky way of loading "alternate" chords into
+   * the currently loaded instrument.
+   */
+  _public.alt2def = function(text) {
+    var output = '';
+		var lines = text.split('\n');
+
+    lines.forEach(function(e) {
+      if (e.search(regEx.alternate) != -1 || e.search(regEx.define) == -1)
+      {
+        output += e.replace('x_UGNG_alternate:', 'define:');
+      }
+    });
+
+    return output;
+  };
+
 	return _public;
 
-}());/**
+}());
+/**
  * Can shift a single chord or list of chords up/down by a series of steps. Hangles
  * finding equivalent chord names (i.e. A# is same as Bb)
  *

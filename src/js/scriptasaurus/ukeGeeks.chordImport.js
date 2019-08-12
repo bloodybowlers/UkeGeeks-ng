@@ -34,6 +34,7 @@ ukeGeeks.chordImport = (function() {
 	var regEx = {
 		// first pass filters
 		define: /\s*{?define\s*:(.*?)(}|add:)/i,
+		alternate: /\s*{?x_UGNG_alternate\s*:(.*?)(}|add:)/i,
 		add: /(add:.*?)(}|add:)/i,
 		// chord building filters
 		name : /(\S+)\s+/,
@@ -344,6 +345,28 @@ ukeGeeks.chordImport = (function() {
 			_partsToChords(parts) // chords
 		);
 	};
+
+  /**
+   * Return the chordPro markup after doing those 2 changes :
+   * 1) removing 'define:' tags
+   * 2) converting 'x_UGNG_alternate:' tags to 'define:' tags
+   *
+   * This is a very hacky way of loading "alternate" chords into
+   * the currently loaded instrument.
+   */
+  _public.alt2def = function(text) {
+    var output = '';
+		var lines = text.split('\n');
+
+    lines.forEach(function(e) {
+      if (e.search(regEx.alternate) != -1 || e.search(regEx.define) == -1)
+      {
+        output += e.replace('x_UGNG_alternate:', 'define:');
+      }
+    });
+
+    return output;
+  };
 
 	return _public;
 
