@@ -38,7 +38,7 @@
   "tb_songbook" : "Songbook",
   "tb_songbook_desc" : "Retour au Songbook...",
   "tb_edit" : "Editer chanson",
-  "tb_edit_descr" : "Editer la chanson...",
+  "tb_edit_descr" : "Modifier ou supprimer la chanson...",
   "tb_layout" : "Affichage",
   "tb_layout_descr" : "Modifier les paramètres d'affichage...",
   "tb_tuning" : "Transposer",
