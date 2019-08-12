@@ -221,7 +221,12 @@ class Ugs{
 
 		if ($action == Actions::Song ) {
 			$actionName = 'songbook';
+    }
+
+		if ($action == Actions::Reindex ) {
+			$actionName = 'reindex';
 		}
+
 		return $directory . strtolower($actionName) . '/' . $param;
 	}
 

@@ -136,5 +136,8 @@
   "about_credits" : "Über diese Seite & Dank...",
   "confirm_delete_song" : "Soll dieser Song wirklich unwiderruflich gelöscht werden?",
   "chordsHovering" : "Chords on mouse hovering",
-  "chordsHovering_descr" : "Display chords diagram on mouse hovering"
+  "chordsHovering_descr" : "Display chords diagram on mouse hovering",
+  "reindex" : "Reindex",
+  "reindex_descr" : "Reindex all the songs",
+  "reindex_confirm" : "Do you really want to reindex your songs ?\n\nNote : This can take some time if you have lots of songs...\n\nContinue ?"
 }

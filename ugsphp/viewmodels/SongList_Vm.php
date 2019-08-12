@@ -31,6 +31,7 @@ class SongList_Vm extends _base_Vm {
 		$title = defined('Config::SongbookHeadline') ? Config::SongbookHeadline : 'The BIG UKE Book';
 
 		$this->EditAjaxUri = Ugs::MakeUri( Actions::AjaxNewSong);
+		$this->ReindexUri = Ugs::MakeUri( Actions::Reindex);
 		$this->LogoutUri = Ugs::MakeUri( Actions::Logout);
 		$this->Headline = $title;
 		$this->SubHeadline = defined('Config::SongbookSubHeadline') ? Config::SongbookSubHeadline : 'Sample Styled Songbook &raquo;';

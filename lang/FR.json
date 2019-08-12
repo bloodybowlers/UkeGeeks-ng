@@ -136,5 +136,8 @@
   "about_credits" : "A propos...",
   "confirm_delete_song" : "Voulez-vous vraiment SUPPRIMER cette chanson ?!",
   "chordsHovering" : "Accords au survol de souris",
-  "chordsHovering_descr" : "Afficher les accords au survol de la souris"
+  "chordsHovering_descr" : "Afficher les accords au survol de la souris",
+  "reindex" : "Ré-indexer",
+  "reindex_descr" : "Reconstruire l'index des chansons",
+  "reindex_confirm" : "Voulez-vous vraiment lancer la ré-indexation des chansons ?\n\nNote : Ceci peut prendre un certains temps en fonction du nombre de chansons...\n\nContinuer ?"
 }

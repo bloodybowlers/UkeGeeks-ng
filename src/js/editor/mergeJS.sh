@@ -16,6 +16,7 @@ ugsEditorPlus.submenuUi.js \
 ugsEditorPlus.newSong.js \
 ugsEditorPlus.updateSong.js \
 ugsEditorPlus.deleteSong.js \
+ugsEditorPlus.reindex.js \
 ugsEditorPlus.typeahead.js \
 ugsEditorPlus.resize.js \
 ugsEditorPlus.chordBuilder.js \

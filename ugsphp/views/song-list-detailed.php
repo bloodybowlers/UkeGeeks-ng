@@ -66,7 +66,10 @@ function BuildSongList($SongList)
 				</em>
 				<?php if ($model->IsNewAllowed) {
 					?>
-					<input type="button" id="openNewDlgBtn" class="baseBtn blueBtn" value="<?php echo Lang::Get('new_song')?>" title="<?php echo Lang::Get('new_song_descr')?>" />
+          <div>
+            <input type="button" id="openNewDlgBtn" class="baseBtn blueBtn" value="<?php echo Lang::Get('new_song')?>" title="<?php echo Lang::Get('new_song_descr')?>" />
+            <input type="button" id="reindexBtn" class="baseBtn" value="<?php echo Lang::Get('reindex')?>" title="<?php echo Lang::Get('reindex_descr')?>" />
+          </div>
 					<?php
 				}
 				?>
@@ -115,6 +118,7 @@ function BuildSongList($SongList)
 		</section>
 		<script type="text/javascript">
 		ugsEditorPlus.newSong.init("<?php echo($model->EditAjaxUri); ?>");
+		ugsEditorPlus.reindex.init("<?php echo($model->ReindexUri); ?>");
 		</script>
 		<?php
 	}
