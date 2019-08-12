@@ -1,7 +1,6 @@
 ugsphp/settings.js
-ugsphp/Config.php
 ugsphp/conf/settings.js
-ugsphp/conf/Config.php
+ugsphp/conf/config.php
 ugsphp/cache/SongList.cache
 ugsphp/cache/SongList.info
 .htaccess
