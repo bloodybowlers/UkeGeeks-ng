@@ -232,7 +232,7 @@ ugsChordBuilder.editorUi = function() {
 		document.getElementById(_ids.showOutputBtn).checked = false;
 		setClass(document.getElementById(_ids.outputBox), 'collapseOutput', true);
 
-		document.getElementById(_ids.saveBtn).value = isNew ? ugs_il8n.add : ugs_il8n_update;
+		document.getElementById(_ids.saveBtn).value = isNew ? ugs_il8n.add : ugs_il8n.update;
 	};
 
 	/**

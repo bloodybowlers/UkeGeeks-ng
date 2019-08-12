@@ -323,7 +323,7 @@ $editDlgCssClassName = $model->IsUpdateAllowed ? '' : 'isHidden';
 <div id="chordsHovering"><canvas id="chordsHoveringCanvas"></canvas></div>
 
 <!-- SCRIPTS -->
-<script type="text/javascript" src="<?php echo($model->StaticsPrefix); ?>js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo($model->StaticsPrefix); ?>js/lazyload.min.js"></script>
 <script type="text/javascript" src="<?php echo($model->StaticsPrefix); ?>js/notify.min.js"></script>
 <script type="text/javascript" src="<?php echo($model->StaticsPrefix); ?>js/jquery.draggable.js"></script>

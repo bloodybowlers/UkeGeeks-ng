@@ -104,7 +104,7 @@ ugsEditorPlus.submenuUi = (function(){
 			}];
 
 		for (var i = map.length - 1; i >= 0; i--) {
-			$item = $('[data-action=' + map[i].action + '] a[href=#' + map[i].value + ']').closest('li');
+			$item = $('[data-action="' + map[i].action + '"] a[href="#' + map[i].value + '"]').closest('li');
 			id = $item.closest('dd').attr('id');
 			setChecked($item);
 			$('label[for=' + id + '] span').text(getLabelText(map[i].action, map[i].value, $item));

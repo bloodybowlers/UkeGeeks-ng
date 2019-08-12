@@ -1793,7 +1793,7 @@ ugsEditorPlus.submenuUi = (function(){
 			}];
 
 		for (var i = map.length - 1; i >= 0; i--) {
-			$item = $('[data-action=' + map[i].action + '] a[href=#' + map[i].value + ']').closest('li');
+			$item = $('[data-action="' + map[i].action + '"] a[href="#' + map[i].value + '"]').closest('li');
 			id = $item.closest('dd').attr('id');
 			setChecked($item);
 			$('label[for=' + id + '] span').text(getLabelText(map[i].action, map[i].value, $item));
@@ -4856,7 +4856,7 @@ ugsChordBuilder.editorUi = function() {
 		document.getElementById(_ids.showOutputBtn).checked = false;
 		setClass(document.getElementById(_ids.outputBox), 'collapseOutput', true);
 
-		document.getElementById(_ids.saveBtn).value = isNew ? ugs_il8n.add : ugs_il8n_update;
+		document.getElementById(_ids.saveBtn).value = isNew ? ugs_il8n.add : ugs_il8n.update;
 	};
 
 	/**
