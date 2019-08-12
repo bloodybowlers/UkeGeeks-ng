@@ -55,7 +55,7 @@ If you want to change this, read below (installing in a different directory).
 
 ## Setup username, preferences
 
-- **Step 1** : Rename the file **/ugsphp/conf/Config_example.php** to **Config.php** and edit-it to suits your needs (username, passwords, language, etc)
+- **Step 1** : Rename the file **/ugsphp/conf/config.php_example** to **config.php** and edit-it to suits your needs (username, passwords, language, etc)
 - **Step 2** : Rename the **/ugsphp/conf/settings.js_example** to **settings.js** and edit-it to suits your preferences (diagram size, position, default theme, ...).
 
 And that's it, you should be good to go. Start adding songs :)
