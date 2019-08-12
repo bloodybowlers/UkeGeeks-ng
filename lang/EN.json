@@ -19,7 +19,7 @@
   "login_need_access" : "Problem ? Need access ?",
   "send_email_btn" : "Send an Email",
   "check_username_password" : "User or password incorrect",
-  "cache_rebuilt" : "Song cache rebuilt :)",
+  "cache_rebuilt" : "Song cache rebuilt &#x263A;",
   "cache_rebuilt_info" : "Song cache rebuilt successfully in %s seconds. %s songs found.",
   "cache_rebuilt_redirect" : "You'll be redirected to the songbook page in a few seconds. If you can't wait, %sclick here%s !",
   "reindex_forbid" : "Cache rebuilding forbidden !",

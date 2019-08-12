@@ -205,3 +205,9 @@ a {
   margin-top: 10px;
 }
 
+.msgBorder {
+  border: 2px dashed black;
+  border-radius: 10px;
+  padding: 30px;
+}
+

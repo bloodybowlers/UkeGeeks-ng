@@ -19,7 +19,7 @@
   "login_need_access" : "Un problème ? Besoin d'un accès ?",
   "send_email_btn" : "Envoyer un email",
   "check_username_password" : "Utilisateur ou mot de passe incorrect",
-  "cache_rebuilt" : "Cache des chansons rafraichi :)",
+  "cache_rebuilt" : "Cache des chansons rafraichi &#x263A;",
   "cache_rebuilt_info" : "Cache rafraichi avec succès en %s secondes. %s chansons trouvées.",
   "cache_rebuilt_redirect" : "Vous allez être redirigé vers l'accueil dans quelques secondes. Si vous êtes vraiment impatient, %scliquez ici%s !",
   "reindex_forbid" : "Reconstruction du cache interdite !",
