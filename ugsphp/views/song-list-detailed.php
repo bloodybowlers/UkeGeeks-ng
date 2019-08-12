@@ -38,7 +38,7 @@ function BuildSongList($SongList)
       }
 
       echo '<li>';
-      echo '  <a href="'.$song->Uri.'"><span class="SongListSong" data-searchable="'.$song->Artist.' - '.$song->Title.'">'.$song->Title.'</span></a>';
+      echo '  <a href="'.$song->Uri.'"'.(Config::openSongInNewTab?' target=_blank':'').'><span class="SongListSong" data-searchable="'.$song->Artist.' - '.$song->Title.'">'.$song->Title.'</span></a>';
       echo '</li>';
     }
 }

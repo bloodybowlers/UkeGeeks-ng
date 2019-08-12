@@ -76,6 +76,13 @@ class Config {
 	const ShowSupportEmail = false;
 
 	/**
+	 * If true, songs are opened in new tabs
+	 * @constant(openSongInNewTab)
+	 * @var Boolean
+	 */
+	const openSongInNewTab = false;
+
+	/**
 	 * Language to use
 	 * @constant(Lang)
 	 * @var string
