@@ -61,8 +61,9 @@ function BuildSongList($SongList)
 	<section class="contentWrap">
 		<?php if ($model->SiteUser->IsAuthenticated) { ?>
 			<aside class='SongListAside'>
-				<em style="font-size:.8em; padding-right:1.5em; color:#BCB59C;"><?php echo Lang::Get('hello').', '. $model->SiteUser->DisplayName; ?> !
+				<em style="font-size:.8em; color:#BCB59C;"><?php echo Lang::Get('hello').', '. $model->SiteUser->DisplayName; ?> !
 					(<a href="<?php echo($model->LogoutUri); ?>"><?php echo Lang::Get('logout')?></a>)
+        <div id="songsInDb"><?php printf(Lang::Get('songsCountInDb'), count($model->SongList))?></div>
 				</em>
 				<?php if ($model->IsNewAllowed) {
 					?>

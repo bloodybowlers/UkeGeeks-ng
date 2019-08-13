@@ -211,3 +211,11 @@ a {
   padding: 30px;
 }
 
+#songsInDb {
+  text-align: right;
+  margin: 5px 0 0 0;
+  font-style: italic;
+  font-size: 1em;
+  color: #BCB59C;
+  cursor: default;
+}

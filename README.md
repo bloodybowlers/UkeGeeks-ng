@@ -44,6 +44,7 @@ UkeGeeks is a songbook editor for ukulele originally created by [Buz Carter](htt
 - Switched to jQuery 2
 - Added an option to open/view song in a new tab
 - Added a reindex button if an admin is logged in
+- Display number of songs in the book
 
 _______________________________________________________
 # Installation
@@ -62,6 +63,8 @@ If you want to change this, read below (installing in a different directory).
 - **Step 2** : Rename the **/ugsphp/conf/settings.js_example** to **settings.js** and edit-it to suits your preferences (diagram size, position, default theme, ...).
 
 And that's it, you should be good to go. Start adding songs :)
+
+### Optionnal
 
 #### Optional : installing in a different directory
 The Songbook assumes that it's installed in your web server's root directory, but you might want it in a subdirectory. Perhaps you want the URLs to be "mysite.com/hobbies/ukulele/music.php", for example. Excellent! To do this we just need to open config.php and change the subdirectory.

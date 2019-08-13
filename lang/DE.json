@@ -139,5 +139,6 @@
   "chordsHovering_descr" : "Display chords diagram on mouse hovering",
   "reindex" : "Reindex",
   "reindex_descr" : "Reindex all the songs",
-  "reindex_confirm" : "Do you really want to reindex your songs ?\n\nNote : This can take some time if you have lots of songs...\n\nContinue ?"
+  "reindex_confirm" : "Do you really want to reindex your songs ?\n\nNote : This can take some time if you have lots of songs...\n\nContinue ?",
+  "songsCountInDb" : "%s songs in the book"
 }
