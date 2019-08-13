@@ -41,11 +41,17 @@ ugsEditorPlus.hoverChords = (function() {
       return false;
     });
 
+    // Specific CSS styling of the chord name
+    // to show the user that hovering is active
+    $('#ukeSongText code em').addClass('hoverlink');
+
   }
 
 	_public.deinit = function() {
     $('#ukeSongText code em').unbind('mouseover');
     $('#ukeSongText code em').unbind('mouseleave');
+    // Removing specific styling
+    $('#ukeSongText code em').removeClass('hoverlink');
   }
 
   function cloneCanvas(srcCanvas, destCanvas)

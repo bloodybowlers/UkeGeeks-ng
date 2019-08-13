@@ -184,6 +184,10 @@
 	font-weight:normal;
 	font-style:normal;
 }
+.ugsChords .hoverlink {
+  border-bottom: 1px dotted;
+  /*cursor: pointer;*/
+}
 /* SHOW CHORD NAMES INLINE
   ------------------------------ */
 .ugs-song-wrap .ugsInline,
