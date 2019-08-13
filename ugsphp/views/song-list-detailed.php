@@ -129,6 +129,7 @@ function BuildSongList($SongList)
       // Init Quick Search
       var qkSrch = ugsEditorPlus.typeahead();
       qkSrch.initialize();
+      qkSrch.setOpenInNewTab(<?php echo Config::openSongInNewTab?>);
 
       // Init Back To Top button
       BackToTop.init();

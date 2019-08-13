@@ -2344,6 +2344,8 @@ ugsEditorPlus.typeahead = function(){
 	var _regex;
 	var _words = [];
 
+  var _openInNewTab = false;
+
 	var _re = {
 		space: /\s{2,}/g,
 		// everything except for alphanumeric gets nuked
@@ -2406,7 +2408,11 @@ ugsEditorPlus.typeahead = function(){
 	};
 
 	var _ta_updater = function (item) {
-		window.location = _keysToDetailsDict[item].href;
+    if(_openInNewTab)
+      window.open(_keysToDetailsDict[item].href, '_blank');
+    else
+      window.location = _keysToDetailsDict[item].href;
+
 		return _keysToDetailsDict[item].searchText;
 	};
 
@@ -2453,6 +2459,10 @@ ugsEditorPlus.typeahead = function(){
 			.val('')
 			.focus();
 	};
+
+  _public.setOpenInNewTab = function(val) {
+    _openInNewTab = val;
+  };
 
 	// ---------------------------------------
 	// return public interface "JSON handle"
