@@ -79,7 +79,12 @@ $editDlgCssClassName = $model->IsUpdateAllowed ? '' : 'isHidden';
 <?php if($model->isOK) {?>
 <section id="ugsAppToolbar" class="ugsAppMenuBar">
 	<ul>
-		<li class="navHome"> <a href="<?php echo Config::Subdirectory.(Config::UseModRewrite?'songbook/':'')?>" title="<?php echo Lang::Get('tb_songbook_desc')?>"><span></span><?php echo Lang::Get('tb_songbook')?></a> </li>
+    <?php if(Config::openSongInNewTab) {
+		  echo '<li class="navHome"> <a href="#" title="'.Lang::Get('close').'" onclick="window.close()"><span></span>'.Lang::Get('close').'</a></li>';
+    }
+    else {
+		  echo '<li class="navHome"> <a href="'.Config::Subdirectory.(Config::UseModRewrite?'songbook/':'').'" title="'.Lang::Get('tb_songbook_desc').'"><span></span>'.Lang::Get('tb_songbook').'</a></li>';
+    } ?>
 		<li class="navLayout showOptionsBox"> <a href="#layoutOptions" title="<?php echo Lang::Get('tb_layout_descr')?>"><span></span><?php echo Lang::Get('tb_layout')?></a></li>
 		<li class="navInstruments showOptionsBox"> <a href="#tuningOptions" title="<?php echo Lang::Get('tb_tuning_descr')?>"><span></span><?php echo Lang::Get('tb_tuning')?></a></li>
 		<li class="navOptions showOptionsBox"> <a href="#optionsDlg" title="<?php echo Lang::Get('tb_options_descr')?>"><span></span><?php echo Lang::Get('tb_options')?></a> </li>
