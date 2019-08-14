@@ -110,6 +110,11 @@ ukeGeeks.cpmParser = function() {
 		if (tmp.length > 0) {
 			song.x_UGNG_diagramPosition = tmp[0];
 		}
+		// x_UGNG_lyricStyle
+		tmp = _getInfo(songDom, _blockTypeEnum.x_UGNG_lyricStyle);
+		if (tmp.length > 0) {
+			song.x_UGNG_lyricStyle = tmp[0];
+		}
 		// Chord Definitions
 		tmp = _getInfo(songDom, _blockTypeEnum.ChordDefinition);
 		if (tmp.length > 0){
@@ -173,6 +178,7 @@ ukeGeeks.cpmParser = function() {
 		Key: 110,
     Capo: 111,
     x_UGNG_diagramPosition: 112,
+    x_UGNG_lyricStyle: 113,
 		// Text Types
 		ChordText: 201,
 		PlainText: 202,
@@ -394,6 +400,9 @@ ukeGeeks.cpmParser = function() {
 							break;
 						case 'x_ugng_diagramposition':
 							tmpBlk.type = _blockTypeEnum.x_UGNG_diagramPosition;
+							break;
+						case 'x_ugng_lyricstyle':
+							tmpBlk.type = _blockTypeEnum.x_UGNG_lyricStyle;
 							break;
 						case 'ukegeeks-meta':
 							tmpBlk.type = _blockTypeEnum.UkeGeeksMeta;

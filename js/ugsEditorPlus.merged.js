@@ -751,7 +751,7 @@ ugsEditorPlus.songUi = (function() {
     if(song.x_UGNG_diagramPosition != '')
     {
       // Quick and dirty way of positioning the diagram !
-      switch(song.x_UGNG_diagramPosition)
+      switch(song.x_UGNG_diagramPosition.toLowerCase())
       {
         case 'none':
           $('#diagramPositionPicker a[href="#none"]').click();
@@ -762,6 +762,27 @@ ugsEditorPlus.songUi = (function() {
         case 'left':
         default:
           $('#diagramPositionPicker a[href="#left"]').click();
+          break;
+      }
+    }
+
+    // ==========================
+    // x_UGNG_lyricStyle
+    // ==========================
+    if(song.x_UGNG_lyricStyle != '')
+    {
+      // Quick and dirty way of changing lyric style !
+      switch(song.x_UGNG_lyricStyle.toLowerCase())
+      {
+        case 'inline':
+          $('#lyricChordsPicker a[href="#inline"]').click();
+          break;
+        case 'minidiagrams':
+          $('#lyricChordsPicker a[href="#miniDiagrams"]').click();
+          break;
+        case 'above':
+        default:
+          $('#lyricChordsPicker a[href="#above"]').click();
           break;
       }
     }

@@ -28,7 +28,8 @@ UkeGeeks is a songbook editor for ukulele originally created by [Buz Carter](htt
   - Key
   - Capo
 - Custom chordPro tags :
-  - x_UGNG_diagramPosition
+  - x_UGNG_diagramPosition (possible values : left, top, none)
+  - x_UGNG_lyricStyle (possible values : inline, above, minidiagrams)
 
 #### Improvements, small fixes, QoL changes
 

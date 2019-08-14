@@ -112,6 +112,13 @@ ukeGeeks.data = (function() {
 		 */
     this.x_UGNG_diagramPosition = '';
 		
+		/**
+		 * Custom lyric style for the current song
+		 * @property x_UGNG_lyricStyle
+		 * @type string
+		 */
+    this.x_UGNG_lyricStyle = '';
+
 		this.ugsMeta=[];
 		/**
 		 * array of data.dots 
