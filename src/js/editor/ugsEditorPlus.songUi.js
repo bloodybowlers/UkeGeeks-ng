@@ -36,7 +36,7 @@ ugsEditorPlus.songUi = (function() {
 	 */
 	_public.update = function(song){
 		var h = document.getElementById('songTitle');
-		h.innerHTML = (song.title.length > 0) ? song.title : 'Untitled-Song';
+		h.innerHTML = (song.title.length > 0) ? song.title : ugs_il8n.untitled_song;
 
 		trySet('songArtist', song.artist);
 		trySet('songAlbum', song.album);

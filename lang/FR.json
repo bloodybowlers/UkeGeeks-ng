@@ -143,5 +143,6 @@
   "songsCountInDb" : "%s chansons dans le songbook",
   "song_title_required" : "Titre de la chanson obligatoire",
   "song_title_required_notice" : "Vous pourrez le changer plus tard. Minimum 2 lettres.",
-  "failed_create_new_song" : "Erreur pendant la création de la chanson.<br/>Vérifiez les permissions du dossier CPM"
+  "failed_create_new_song" : "Erreur pendant la création de la chanson.<br/>Vérifiez les permissions du dossier CPM",
+  "untitled_song" : "Chanson-sans-Titre"
 }

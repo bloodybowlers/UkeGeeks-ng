@@ -143,5 +143,6 @@
   "songsCountInDb" : "%s songs in the book",
   "song_title_required" : "Song title required",
   "song_title_required_notice" : "You can change it later. Minimum 2 characters.",
-  "failed_create_new_song" : "Error while creating the new song<br/>Please check permissions on the CPM folder."
+  "failed_create_new_song" : "Error while creating the new song<br/>Please check permissions on the CPM folder.",
+  "untitled_song" : "Untitled-Song"
 }
