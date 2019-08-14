@@ -624,6 +624,12 @@ ukeGeeks.data = (function() {
 		 */
 		this.key = '';
 		/**
+		 * Song's Capo (fret number)
+		 * @property capo
+		 * @type string
+		 */
+		this.capo = '';
+		/**
 		 * 
 		 * @property body
 	   * @type string
@@ -749,7 +755,8 @@ ukeGeeks.data = (function() {
 
 	return _public;
 
-}());/**
+}());
+/**
  * some jQuery-like tools (very, very crappy. wish we could count on jQuery being on the page.)
  * if you do want to use jQuery (and why wouldn't you) I'm not offended if you yank this out.
  * @class toolsLite
@@ -2126,6 +2133,11 @@ ukeGeeks.cpmParser = function() {
 		if (tmp.length > 0) {
 			song.key = tmp[0];
 		}
+		// Capo
+		tmp = _getInfo(songDom, _blockTypeEnum.Capo);
+		if (tmp.length > 0) {
+			song.capo = tmp[0];
+		}
 		// Chord Definitions
 		tmp = _getInfo(songDom, _blockTypeEnum.ChordDefinition);
 		if (tmp.length > 0){
@@ -2187,6 +2199,7 @@ ukeGeeks.cpmParser = function() {
 		Artist: 108,
 		NewPage: 109,
 		Key: 110,
+    Capo: 111,
 		// Text Types
 		ChordText: 201,
 		PlainText: 202,
@@ -2402,6 +2415,9 @@ ukeGeeks.cpmParser = function() {
 							break;
 						case 'define':
 							tmpBlk.type = _blockTypeEnum.ChordDefinition;
+							break;
+						case 'capo':
+							tmpBlk.type = _blockTypeEnum.Capo;
 							break;
 						case 'ukegeeks-meta':
 							tmpBlk.type = _blockTypeEnum.UkeGeeksMeta;

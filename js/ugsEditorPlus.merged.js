@@ -734,9 +734,13 @@ ugsEditorPlus.songUi = (function() {
 		trySet('songAlbum', song.album);
     trySet('songSubtitle', song.st);
     if(song.key != '')
-      $('#songKey').html('Key : ' + song.key);
+      trySet('songKey', 'Key : ' + song.key);
     else
-      $('#songKey').html('');
+      trySet('songKey', '');
+    if(song.capo != '')
+      trySet('songCapo', 'Capo : ' + song.capo);
+    else
+      trySet('songCapo', '');
 
 		h = document.getElementById('songMeta');
 		if (!song.ugsMeta || (song.ugsMeta.length < 1)){

@@ -87,6 +87,12 @@ ukeGeeks.data = (function() {
 		 */
 		this.key = '';
 		/**
+		 * Song's Capo (fret number)
+		 * @property capo
+		 * @type string
+		 */
+		this.capo = '';
+		/**
 		 * 
 		 * @property body
 	   * @type string

@@ -18,6 +18,7 @@ class SongHelper {
 			 'artist' => '',
 			 'album' => '',
        'key' => '',
+       'capo' => '',
 			 'body' => '{title: '.Lang::Get('song_not_found_title').'}'."\n".'{subtitle: '.Lang::Get('song_not_found_subtitle').'}'."\n".
                  '[D]Lalalaaaa [A7]Lalaaaaaaaaaaaaala ?' . "\n" . 'Lala [G]laaaaaalalalaaaaaaaaaa [D]la !',
 			 'meta' => array()
@@ -33,6 +34,7 @@ class SongHelper {
 		$song->artist = self::getArtist($text);
 		$song->album = self::getAlbum($text);
 		$song->key = self::getKey($text);
+		$song->capo = self::getCapo($text);
 		$song->meta = self::getMeta($text);
 		$song->body = $text;
 		
@@ -80,12 +82,21 @@ class SongHelper {
 	}
 
 	/**
-	 * parses Album tag: {Key: X}
+	 * parses Key tag: {Key: X}
 	 * @param string $text input string to be parses
 	 * @return string 
 	 */
 	private static function getKey($text) {
 		return self::_matchRegEx($text, 1, "/{key\s*:\s*(.+?)}/i");
+	}
+
+	/**
+	 * parses Capo tag: {Capo: X}
+	 * @param string $text input string to be parses
+	 * @return string 
+	 */
+	private static function getCapo($text) {
+		return self::_matchRegEx($text, 1, "/{capo\s*:\s*(.+?)}/i");
 	}
 
 	/**

@@ -25,6 +25,7 @@ class Song_Vmb extends _base_Vmb {
 		$viewModel->Artist = $song->artist;
 		$viewModel->Album = $song->album; // htmlspecialchars();
 		$viewModel->Key = $song->key;
+		$viewModel->Capo = $song->capo;
 		$viewModel->Body = $song->body;
 		$viewModel->UgsMeta = $song->meta;
 		$viewModel->SourceUri = Ugs::MakeUri(Actions::Source, $filename);

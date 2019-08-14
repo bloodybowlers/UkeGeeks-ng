@@ -27,6 +27,7 @@ $editDlgCssClassName = $model->IsUpdateAllowed ? '' : 'isHidden';
 			<h2 id="songArtist" class="ugs-songArtist" style="display:<?php echo(GetDisplayStyle($model->Artist)); ?>;"><?php echo($model->Artist); ?></h2>
 			<h2 id="songAlbum" class="ugs-songAlbum" style="display:<?php echo(GetDisplayStyle($model->Album)); ?>;"><?php echo($model->Album); ?></h2>
 			<h2 id="songKey" class="ugs-songKey song-chordpro-more-info" style="display:<?php echo(GetDisplayStyle($model->Key)); ?>;"></h2>
+			<h2 id="songCapo" class="ugs-songCapo song-chordpro-more-info" style="display:<?php echo(GetDisplayStyle($model->Capo)); ?>;"></h2>
 		</hgroup>
 	</header>
 	<div class="metaInfo" id="songMeta"> </div>
