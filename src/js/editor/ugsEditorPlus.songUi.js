@@ -86,7 +86,11 @@ ugsEditorPlus.songUi = (function() {
           $('#lyricChordsPicker a[href="#inline"]').click();
           break;
         case 'minidiagrams':
-          $('#lyricChordsPicker a[href="#miniDiagrams"]').click();
+          // MANDATORY : test if already checked to prevent an infinite loop overflowing the call stack !
+          if(!$('#lyricChordsPicker a[href="#miniDiagrams"]').parent('li').hasClass('checked'))
+          {
+            $('#lyricChordsPicker a[href="#miniDiagrams"]').click();
+          }
           break;
         case 'above':
         default:
