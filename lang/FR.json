@@ -15,7 +15,7 @@
   "cancel" : "Annuler",
   "username" : "Utilisateur",
   "password" : "Mot de passe",
-  "login_page_title" : "Login requis",
+  "login_page_title" : "Login",
   "login_need_access" : "Un problème ? Besoin d'un accès ?",
   "send_email_btn" : "Envoyer un email",
   "check_username_password" : "Utilisateur ou mot de passe incorrect",
