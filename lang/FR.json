@@ -140,5 +140,8 @@
   "reindex" : "Ré-indexer",
   "reindex_descr" : "Reconstruire l'index des chansons",
   "reindex_confirm" : "Voulez-vous vraiment lancer la ré-indexation des chansons ?\n\nNote : Ceci peut prendre un certains temps en fonction du nombre de chansons...\n\nContinuer ?",
-  "songsCountInDb" : "%s chansons dans le songbook"
+  "songsCountInDb" : "%s chansons dans le songbook",
+  "song_title_required" : "Titre de la chanson obligatoire",
+  "song_title_required_notice" : "Vous pourrez le changer plus tard. Minimum 2 lettres.",
+  "failed_create_new_song" : "Erreur pendant la création de la chanson.<br/>Vérifiez les permissions du dossier CPM"
 }

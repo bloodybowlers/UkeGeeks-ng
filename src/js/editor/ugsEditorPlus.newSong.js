@@ -82,7 +82,7 @@ ugsEditorPlus.newSong = (function() {
 					doAjaxOk(data);
 			},
 			error: function(data) {
-				showErrors(true, 'Failed to create the song file.<br/>Please have your admin check the CPM directory permissions.');
+				showErrors(true, ugs_il8n.failed_create_new_song);
 				}
 			});
 		};
@@ -92,7 +92,7 @@ ugsEditorPlus.newSong = (function() {
 		var title = $title.val().trim();
 		$title.val(title);
 		var ok = title.length > 2;
-		showErrors(!ok, 'Song\'s title is required<br/><em>(you may change it later, must be at least 2 characters)</em>');
+		showErrors(!ok, ugs_il8n.song_title_required + '<br/><em>' + ugs_il8n.song_title_required_notice + '</em>');
 		return ok;
 	};
 

@@ -140,5 +140,8 @@
   "reindex" : "Reindex",
   "reindex_descr" : "Reindex all the songs",
   "reindex_confirm" : "Do you really want to reindex your songs ?\n\nNote : This can take some time if you have lots of songs...\n\nContinue ?",
-  "songsCountInDb" : "%s songs in the book"
+  "songsCountInDb" : "%s songs in the book",
+  "song_title_required" : "Song title required",
+  "song_title_required_notice" : "You can change it later. Minimum 2 characters.",
+  "failed_create_new_song" : "Error while creating the new song<br/>Please check permissions on the CPM folder."
 }
