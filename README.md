@@ -24,7 +24,7 @@ UkeGeeks is a songbook editor for ukulele originally created by [Buz Carter](htt
   - (you can contribute :p)
 - **Chord Finder** and **Reverse Chord Finder** (from UkeGeeks website 'tool' source code)
 - Removed **legacy browser** support
-- Added support for some more chordPro tags : Key
+- Added support for some more chordPro tags : Key, Capo
 
 #### Improvements, small fixes, QoL changes
 
