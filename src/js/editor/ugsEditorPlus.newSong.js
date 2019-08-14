@@ -20,9 +20,11 @@ ugsEditorPlus.newSong = (function() {
 	var _isUpdating = false;
 
 	var _ajaxUri = '';
+  var _openInNewTab = false;
 
-	_public.init = function(ajaxUri) {
+	_public.init = function(ajaxUri, openInNewTab) {
 		_ajaxUri = ajaxUri;
+		_openInNewTab = openInNewTab;
 
 		$('#newSongBtn').click(function(e) {
 			if(doValidate(this)) {
@@ -59,7 +61,16 @@ ugsEditorPlus.newSong = (function() {
 			if(data.HasErrors) {
 				return;
 			}
-			document.location.href = data.ContinueUri;
+
+      // Reset and hide the 'new song' form
+      $('#songTitle').val('');
+      $('#songArtist').val('');
+      $('#newSongForm').hide();
+
+      if(_openInNewTab)
+        window.open(data.ContinueUri, '_blank');
+      else
+        window.location = data.ContinueUri;
 		};
 
 	var doPost = function() {

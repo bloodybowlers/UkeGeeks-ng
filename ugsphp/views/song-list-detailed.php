@@ -118,7 +118,7 @@ function BuildSongList($SongList)
 			</div>
 		</section>
 		<script type="text/javascript">
-		ugsEditorPlus.newSong.init("<?php echo($model->EditAjaxUri); ?>");
+		ugsEditorPlus.newSong.init(<?php echo '"'.$model->EditAjaxUri.'",'.Config::openSongInNewTab?>);
 		ugsEditorPlus.reindex.init("<?php echo($model->ReindexUri); ?>");
 		</script>
 		<?php
