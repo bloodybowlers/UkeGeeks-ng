@@ -93,7 +93,10 @@ ugsEditorPlus.typeahead = function(){
     else
       window.location = _keysToDetailsDict[item].href;
 
-		return _keysToDetailsDict[item].searchText;
+    // Do not return the searched text if we want the
+    // input field empty after we redirect !
+		//return _keysToDetailsDict[item].searchText;
+    return '';
 	};
 
 	var _ta_matcher = function (item) {
