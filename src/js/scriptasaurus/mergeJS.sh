@@ -6,7 +6,6 @@ ukeGeeks.namespace.js \
 ukeGeeks.definitions.js \
 ukeGeeks.settings.js \
 ukeGeeks.data.js \
-ukeGeeks.toolsLite.js \
 ukeGeeks.chordImport.js \
 ukeGeeks.transpose.js \
 ukeGeeks.definitions.standardUkuleleGcea.js \

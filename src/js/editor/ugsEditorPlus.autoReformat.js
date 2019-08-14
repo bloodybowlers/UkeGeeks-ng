@@ -55,7 +55,7 @@ ugsEditorPlus.autoReformat = (function() {
 	};
 
 	var doClose = function(){
-		ukeGeeks.toolsLite.addClass(_ele.reformatDlg, 'isHidden');
+		$(_ele.reformatDlg).addClass('isHidden');
 	};
 
 	var doDisable = function(isDisabled){
@@ -70,7 +70,7 @@ ugsEditorPlus.autoReformat = (function() {
 			return;
 		}
 
-		ukeGeeks.toolsLite.removeClass(_ele.reformatDlg, 'isHidden');
+		$(_ele.reformatDlg).removeClass('isHidden');
 	};
 
 	// ---------------------------------------

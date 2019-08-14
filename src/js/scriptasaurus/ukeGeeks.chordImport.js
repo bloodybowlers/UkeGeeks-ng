@@ -60,7 +60,8 @@ ukeGeeks.chordImport = (function() {
 	 * @return {array<chordParts>}
 	 */
 	var _lineToParts = function(line){
-		var s = ukeGeeks.toolsLite.pack(line);
+    var s = $.trim(line.replace(/  +/g, ' '));
+
 		if (s.length > 1 && s[0] != '#'){
 			var m = s.match(regEx.define);
 			if (m && m.length > 1){
@@ -115,7 +116,8 @@ ukeGeeks.chordImport = (function() {
 	 */
 	var _getInstrument = function(text){
 		var c = text.match(regEx.instr);
-		return !c ? null : ukeGeeks.toolsLite.pack(c[1]);
+		return !c ? null : $.trim(c[1].replace(/  +/g, ' '));
+    
 	};
 	
 	/**

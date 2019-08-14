@@ -30,7 +30,6 @@ $files_array = array(
 	'./scriptasaurus/ukeGeeks.definitions.js', 
 	'./scriptasaurus/ukeGeeks.settings.js', 
 	'./scriptasaurus/ukeGeeks.data.js', 
-	'./scriptasaurus/ukeGeeks.toolsLite.js', 
 	'./scriptasaurus/ukeGeeks.chordImport.js', 
 	'./scriptasaurus/ukeGeeks.transpose.js', 
 	'./scriptasaurus/ukeGeeks.definitions.standardUkuleleGcea.js', 

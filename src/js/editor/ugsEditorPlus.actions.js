@@ -263,13 +263,13 @@ ugsEditorPlus.actions = (function() {
 	 */
 	var doPlacement = function(value){
 		var isRunRequired = false;
-		ukeGeeks.toolsLite.setClass(_ele.songContainer, 'ugsInline', (value == 'inline'));
+		$(_ele.songContainer).toggleClass('ugsInline', (value == 'inline'));
 
 		// NOTE: ugs already adds the "chord diagrams above" class based on setting,
 		// BUT does NOT remove it!!!!
 		var isMiniDiagrams = (value == 'miniDiagrams');
 		if (!isMiniDiagrams){
-			ukeGeeks.toolsLite.removeClass(_ele.songContainer, 'ugsInlineDiagrams');
+			$(_ele.songContainer).removeClass('ugsInlineDiagrams');
 		}
 
 		if (isMiniDiagrams || (_prevValues.placement == 'miniDiagrams')){
@@ -430,11 +430,11 @@ ugsEditorPlus.actions = (function() {
 		ugsEditorPlus.submenuUi.resetTransposeLabel();
 
 		for (var i = 0; i < items.length; i++) {
-			ukeGeeks.toolsLite.removeClass(items[i], 'checked');
+			$(items[i]).removeClass('checked');
 			sample = (keyChord.length < 1) ? '' : ukeGeeks.transpose.shift(keyChord, steps);
 			items[i].getElementsByTagName('em')[0].innerHTML = sample;
 			if (steps === 0) {
-				ukeGeeks.toolsLite.addClass(items[i], 'checked');
+        $(items[i]).removeClass('checked');
 			}
 			steps++;
 		}
@@ -488,7 +488,7 @@ ugsEditorPlus.actions = (function() {
 		var cleanList = [];
 
 		for (var i = 0; i < inputList.length; i++) {
-			var c = ukeGeeks.toolsLite.trim(inputList[i]);
+			var c = $.trim(inputList[i]);
 			if (c.length > 0){
 				cleanList.push(c);
 			}

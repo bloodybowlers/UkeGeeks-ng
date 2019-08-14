@@ -54,18 +54,18 @@ ukeGeeks.scriptasaurus = (function() {
 	 * @method runByClasses
 	 * @return {Array of songObject}
 	 */
-	_public.runByClasses = function() {
-		var songs = [];
-		var songWraps = ukeGeeks.toolsLite.getElementsByClass(ukeGeeks.settings.wrapClasses.wrap);
-		for(var i = 0; i < songWraps.length; i++){
-			var handles = _getHandlesFromClass(songWraps[i]);
-			if (handles === null) {
-				continue;
-			}
-			songs.push(_runSong(handles));
-		}
-		return songs;
-	};
+	//_public.runByClasses = function() {
+		//var songs = [];
+		//var songWraps = $('.'+ukeGeeks.settings.wrapClasses.wrap).get();
+		//for(var i = 0; i < songWraps.length; i++){
+			//var handles = _getHandlesFromClass(songWraps[i]);
+			//if (handles === null) {
+				//continue;
+			//}
+			//songs.push(_runSong(handles));
+		//}
+		//return songs;
+	//};
 
 	/**
 	 * Is this really nececessary?
@@ -106,7 +106,7 @@ ukeGeeks.scriptasaurus = (function() {
 		painter.show(song.chords);
 		// Show chord diagrams inline with lyrics
 		if (ukeGeeks.settings.inlineDiagrams){
-			ukeGeeks.toolsLite.addClass(handles.wrap, 'ugsInlineDiagrams');
+			$(handles.wrap).addClass('ugsInlineDiagrams');
 			painter.showInline(song.chords);
 		}
 
@@ -120,7 +120,7 @@ ukeGeeks.scriptasaurus = (function() {
 
 		var container = handles.wrap;
 		if (container){
-			ukeGeeks.toolsLite.setClass(container, 'ugsNoChords', !song.hasChords);
+			$(container).toggleClass('ugsNoChords', !song.hasChords);
 		}
 
 		if (ukeGeeks.settings.opts.autoFixOverlaps){
@@ -162,14 +162,14 @@ ukeGeeks.scriptasaurus = (function() {
 	 * @param wrap {domElement}
 	 * @return {ukeGeeks.data.htmlHandles}
 	 */
-	var _getHandlesFromClass = function(wrap){
-		var diagrams = ukeGeeks.toolsLite.getElementsByClass(ukeGeeks.settings.wrapClasses.diagrams, wrap);
-		var text = ukeGeeks.toolsLite.getElementsByClass(ukeGeeks.settings.wrapClasses.text, wrap);
-		if ((diagrams === undefined) || (diagrams.length < 1) || (text === undefined) || (text.length < 1)) {
-			return null;
-		}
-		return new ukeGeeks.data.htmlHandles(wrap, diagrams[0], text[0]);
-	};
+	//var _getHandlesFromClass = function(wrap){
+		//var diagrams = ukeGeeks.toolsLite.getElementsByClass(ukeGeeks.settings.wrapClasses.diagrams, wrap);
+		//var text = ukeGeeks.toolsLite.getElementsByClass(ukeGeeks.settings.wrapClasses.text, wrap);
+		//if ((diagrams === undefined) || (diagrams.length < 1) || (text === undefined) || (text.length < 1)) {
+			//return null;
+		//}
+		//return new ukeGeeks.data.htmlHandles(wrap, diagrams[0], text[0]);
+	//};
 
 	/**
 	 *

@@ -75,7 +75,7 @@ ukeGeeks.tabs = function() {
 		var lines = text.split('\n');
 		var tab = [];
 		for (var i in lines) {
-			var s = ukeGeeks.toolsLite.trim(lines[i]);
+			var s = $.trim(lines[i]);
 			if (s.length > 0){
 				tab.push(s);
 			}

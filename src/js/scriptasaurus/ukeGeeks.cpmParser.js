@@ -328,7 +328,7 @@ ukeGeeks.cpmParser = function() {
 				}
 			}
 			else{
-				var s = ukeGeeks.toolsLite.trim(lines[i]);
+				var s = $.trim(lines[i]);
 				if (s.length > 0){
 					tmpBlk.lines.push(s);
 				}
@@ -411,7 +411,7 @@ ukeGeeks.cpmParser = function() {
 							tmpBlk.type = 'Undefined-'+verb;
 							break;
 					}
-					tmpBlk.lines[0] = ukeGeeks.toolsLite.trim(args);
+					tmpBlk.lines[0] = $.trim(args);
 					song[i].lines[j] = tmpBlk;
 				}
 			}
@@ -487,7 +487,7 @@ ukeGeeks.cpmParser = function() {
 
 				chordFound = regEx.chord.test(line);
 				_hasChords = _hasChords || chordFound;
-				hasOnlyChords = chordFound && (ukeGeeks.toolsLite.trim(line.replace(regEx.allChords, '')).length < 1);
+				hasOnlyChords = chordFound && ($.trim(line.replace(regEx.allChords, '')).length < 1);
 						// need to find
 						song[i].lines[j] = {
 					type: (hasOnlyChords ? _blockTypeEnum.ChordOnlyText : (chordFound ? _blockTypeEnum.ChordText : _blockTypeEnum.PlainText)),

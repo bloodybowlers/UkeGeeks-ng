@@ -771,113 +771,6 @@ ukeGeeks.data = (function() {
 
 }());
 /**
- * some jQuery-like tools (very, very crappy. wish we could count on jQuery being on the page.)
- * if you do want to use jQuery (and why wouldn't you) I'm not offended if you yank this out.
- * @class toolsLite
- * @namespace ukeGeeks
- * @singleton
- */
-ukeGeeks.toolsLite = (function() {
-	/**
-	 * attach public members to this object
-	 * @property _public
-	 * @type {Object}
-	 */
-	var _public = {};
-
-	var regEx = {
-		dbleSpace: /\s{2,}/g,
-		trim: /^\s+|\s+$/g
-	};
-	
-	/**
-	 * adds className to element. 
-	 * @method addClass
-	 * @param element {DOM_element} target element
-	 * @param className {string} CSS classname to add
-	 * @return {void}
-	 */
-	_public.addClass = function(element, className) {
-		if (!_public.hasClass(element, className)) {
-			element.className += ' ' + className; 
-		}
-	};
-	
-	_public.hasClass = function(element, className) {
-		return element.className.match(getRegEx(className));
-	};
-
-	_public.removeClass = function(element, className) {
-		if (_public.hasClass(element, className)) {
-			var reg = getRegEx(className);
-			element.className=element.className.replace(reg,' ');
-		}
-	};
-	
-	_public.setClass = function(element, className, isActive) {
-		if (isActive){
-			_public.addClass(element, className);
-		}
-		else{
-			_public.removeClass(element, className);
-		}
-	};
-
-	var getRegEx = function(className){
-		return new RegExp('(\\s|^)'+className+'(\\s|$)');
-	};
-	
-	/**
-	 * Removes all white space at the begining and end of a string.
-	 * @method trim
-	 * @param str {String} String to trim.
-	 * @return {String} Returns string without leading and following white space characters.
-	 */
-	_public.trim = function(str) {
-		return str.replace(regEx.trim, '');
-	};
-	
-	_public.pack = function(value) {
-		return value.replace(regEx.dbleSpace, ' ').replace(regEx.trim, '');
-	};
-	
-	/**
-	 * Searches within Node for tags with specified CSS class.
-	 * @method getElementsByClass
-	 * @param searchClass {string}  CSS Classname
-	 * @param node {HtmlNode} parent node to begin search within. Defaults to entire document.
-	 * @param tag {string} restrict search to a specific tag name. defaults to all tags.
-	 * @return {arrayDomElements}
-	 */
-	_public.getElementsByClass = function(searchClass, node, tag) {
-		var i, j;
-		// use falsey -- if ((node === null) || (node === undefined)) {
-		if (!node) {
-			node = document;
-		}
-		if (node.getElementsByClassName){
-			return node.getElementsByClassName(searchClass);
-		}
-
-		var classElements = [];
-		if (!tag) {
-			tag = '*';
-		}
-		var els = node.getElementsByTagName(tag);
-		var elsLen = els.length;
-		var pattern = new RegExp("(^|\\s)"+searchClass+"(\\s|$)");
-		for (i = 0, j = 0; i < elsLen; i++) {
-			if (pattern.test(els[i].className)) {
-				classElements[j] = els[i];
-				j++;
-			}
-		}
-		return classElements;
-	};
-
-	return _public;
-
-}());/**
  * Converts text to JSON objects. Accetps either large text blocks or single lines of 
  * text written in CPM syntax (looks for instrument, tuning, and define statements). 
  * @class chordImport
@@ -939,7 +832,8 @@ ukeGeeks.chordImport = (function() {
 	 * @return {array<chordParts>}
 	 */
 	var _lineToParts = function(line){
-		var s = ukeGeeks.toolsLite.pack(line);
+    var s = $.trim(line.replace(/  +/g, ' '));
+
 		if (s.length > 1 && s[0] != '#'){
 			var m = s.match(regEx.define);
 			if (m && m.length > 1){
@@ -994,7 +888,8 @@ ukeGeeks.chordImport = (function() {
 	 */
 	var _getInstrument = function(text){
 		var c = text.match(regEx.instr);
-		return !c ? null : ukeGeeks.toolsLite.pack(c[1]);
+		return !c ? null : $.trim(c[1].replace(/  +/g, ' '));
+    
 	};
 	
 	/**
@@ -1226,7 +1121,8 @@ ukeGeeks.chordImport = (function() {
 
 	return _public;
 
-}());/**
+}());
+/**
  * Can shift a single chord or list of chords up/down by a series of steps. Hangles
  * finding equivalent chord names (i.e. A# is same as Bb)
  *
@@ -2375,7 +2271,7 @@ ukeGeeks.cpmParser = function() {
 				}
 			}
 			else{
-				var s = ukeGeeks.toolsLite.trim(lines[i]);
+				var s = $.trim(lines[i]);
 				if (s.length > 0){
 					tmpBlk.lines.push(s);
 				}
@@ -2458,7 +2354,7 @@ ukeGeeks.cpmParser = function() {
 							tmpBlk.type = 'Undefined-'+verb;
 							break;
 					}
-					tmpBlk.lines[0] = ukeGeeks.toolsLite.trim(args);
+					tmpBlk.lines[0] = $.trim(args);
 					song[i].lines[j] = tmpBlk;
 				}
 			}
@@ -2534,7 +2430,7 @@ ukeGeeks.cpmParser = function() {
 
 				chordFound = regEx.chord.test(line);
 				_hasChords = _hasChords || chordFound;
-				hasOnlyChords = chordFound && (ukeGeeks.toolsLite.trim(line.replace(regEx.allChords, '')).length < 1);
+				hasOnlyChords = chordFound && ($.trim(line.replace(regEx.allChords, '')).length < 1);
 						// need to find
 						song[i].lines[j] = {
 					type: (hasOnlyChords ? _blockTypeEnum.ChordOnlyText : (chordFound ? _blockTypeEnum.ChordText : _blockTypeEnum.PlainText)),
@@ -2838,7 +2734,7 @@ ukeGeeks.tabs = function() {
 		var lines = text.split('\n');
 		var tab = [];
 		for (var i in lines) {
-			var s = ukeGeeks.toolsLite.trim(lines[i]);
+			var s = $.trim(lines[i]);
 			if (s.length > 0){
 				tab.push(s);
 			}
@@ -3421,18 +3317,18 @@ ukeGeeks.scriptasaurus = (function() {
 	 * @method runByClasses
 	 * @return {Array of songObject}
 	 */
-	_public.runByClasses = function() {
-		var songs = [];
-		var songWraps = ukeGeeks.toolsLite.getElementsByClass(ukeGeeks.settings.wrapClasses.wrap);
-		for(var i = 0; i < songWraps.length; i++){
-			var handles = _getHandlesFromClass(songWraps[i]);
-			if (handles === null) {
-				continue;
-			}
-			songs.push(_runSong(handles));
-		}
-		return songs;
-	};
+	//_public.runByClasses = function() {
+		//var songs = [];
+		//var songWraps = $('.'+ukeGeeks.settings.wrapClasses.wrap).get();
+		//for(var i = 0; i < songWraps.length; i++){
+			//var handles = _getHandlesFromClass(songWraps[i]);
+			//if (handles === null) {
+				//continue;
+			//}
+			//songs.push(_runSong(handles));
+		//}
+		//return songs;
+	//};
 
 	/**
 	 * Is this really nececessary?
@@ -3473,7 +3369,7 @@ ukeGeeks.scriptasaurus = (function() {
 		painter.show(song.chords);
 		// Show chord diagrams inline with lyrics
 		if (ukeGeeks.settings.inlineDiagrams){
-			ukeGeeks.toolsLite.addClass(handles.wrap, 'ugsInlineDiagrams');
+			$(handles.wrap).addClass('ugsInlineDiagrams');
 			painter.showInline(song.chords);
 		}
 
@@ -3487,7 +3383,7 @@ ukeGeeks.scriptasaurus = (function() {
 
 		var container = handles.wrap;
 		if (container){
-			ukeGeeks.toolsLite.setClass(container, 'ugsNoChords', !song.hasChords);
+			$(container).toggleClass('ugsNoChords', !song.hasChords);
 		}
 
 		if (ukeGeeks.settings.opts.autoFixOverlaps){
@@ -3529,14 +3425,14 @@ ukeGeeks.scriptasaurus = (function() {
 	 * @param wrap {domElement}
 	 * @return {ukeGeeks.data.htmlHandles}
 	 */
-	var _getHandlesFromClass = function(wrap){
-		var diagrams = ukeGeeks.toolsLite.getElementsByClass(ukeGeeks.settings.wrapClasses.diagrams, wrap);
-		var text = ukeGeeks.toolsLite.getElementsByClass(ukeGeeks.settings.wrapClasses.text, wrap);
-		if ((diagrams === undefined) || (diagrams.length < 1) || (text === undefined) || (text.length < 1)) {
-			return null;
-		}
-		return new ukeGeeks.data.htmlHandles(wrap, diagrams[0], text[0]);
-	};
+	//var _getHandlesFromClass = function(wrap){
+		//var diagrams = ukeGeeks.toolsLite.getElementsByClass(ukeGeeks.settings.wrapClasses.diagrams, wrap);
+		//var text = ukeGeeks.toolsLite.getElementsByClass(ukeGeeks.settings.wrapClasses.text, wrap);
+		//if ((diagrams === undefined) || (diagrams.length < 1) || (text === undefined) || (text.length < 1)) {
+			//return null;
+		//}
+		//return new ukeGeeks.data.htmlHandles(wrap, diagrams[0], text[0]);
+	//};
 
 	/**
 	 *
