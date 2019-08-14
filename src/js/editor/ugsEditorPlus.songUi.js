@@ -38,6 +38,9 @@ ugsEditorPlus.songUi = (function() {
 		var h = document.getElementById('songTitle');
 		h.innerHTML = (song.title.length > 0) ? song.title : ugs_il8n.untitled_song;
 
+    // ======================
+    // Song informations
+    // ======================
 		trySet('songArtist', song.artist);
 		trySet('songAlbum', song.album);
     trySet('songSubtitle', song.st);
@@ -49,6 +52,27 @@ ugsEditorPlus.songUi = (function() {
       trySet('songCapo', 'Capo : ' + song.capo);
     else
       trySet('songCapo', '');
+
+    // ==========================
+    // x_UGNG_diagramPosition
+    // ==========================
+    if(song.x_UGNG_diagramPosition != '')
+    {
+      // Quick and dirty way of positioning the diagram !
+      switch(song.x_UGNG_diagramPosition)
+      {
+        case 'none':
+          $('#diagramPositionPicker a[href="#none"]').click();
+          break;
+        case 'top':
+          $('#diagramPositionPicker a[href="#top"]').click();
+          break;
+        case 'left':
+        default:
+          $('#diagramPositionPicker a[href="#left"]').click();
+          break;
+      }
+    }
 
 		h = document.getElementById('songMeta');
 		if (!song.ugsMeta || (song.ugsMeta.length < 1)){

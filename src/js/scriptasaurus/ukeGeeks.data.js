@@ -104,6 +104,13 @@ ukeGeeks.data = (function() {
 	   * @type bool
 	   */
 		this.hasChords = false;
+
+		/**
+		 * Custom diagram position for the current song
+		 * @property x_UGNG_diagramPosition
+		 * @type string
+		 */
+    this.x_UGNG_diagramPosition = '';
 		
 		this.ugsMeta=[];
 		/**
