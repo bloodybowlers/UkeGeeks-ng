@@ -34,10 +34,12 @@ ugsEditorPlus.deleteSong = (function() {
 	 * @type {Boolean}
 	 */
 	var _isDeleting = false;
+  var _openInNewTab = false;
 
-	_public.init = function(ajaxUri, filename) {
+	_public.init = function(ajaxUri, filename, openInNewTab) {
 		_ajaxUri = ajaxUri;
 		_filename = filename;
+		_openInNewTab = openInNewTab;
 
 		$(_selectors.button).click(function(event) {
       if( !confirm( ugs_il8n.confirm_delete_song ) ) {  return false; }
@@ -103,7 +105,10 @@ ugsEditorPlus.deleteSong = (function() {
 	var doAjaxOk = function(data) {
 		if (!data.HasErrors)
     {
-      document.location.href = '/';
+      if(_openInNewTab)
+        window.close();
+      else
+        document.location.href = '/';
     }
 	};
 

@@ -357,7 +357,7 @@ $(function()
   <?php if ($model->IsUpdateAllowed) {
     ?>
     ugsEditorPlus.updateSong.init("<?php echo($model->UpdateAjaxUri); ?>", "<?php echo($model->Id); ?>");
-    ugsEditorPlus.deleteSong.init("<?php echo($model->DeleteAjaxUri); ?>", "<?php echo($model->Id); ?>");
+    ugsEditorPlus.deleteSong.init("<?php echo($model->DeleteAjaxUri); ?>", "<?php echo($model->Id);?>", <?php echo Config::openSongInNewTab;?>);
     <?php
     }
   ?>
