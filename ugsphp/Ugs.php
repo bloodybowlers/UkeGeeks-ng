@@ -74,25 +74,18 @@ class Ugs{
 	 */
 	private function DoAuthenticate( $action ) {
 
-		if (! Config::IsLoginRequired ) {
-			$user = new SiteUser();
-			$user->IsAllowAccess = true;
-			return  $user;
-		}
-
 		$login = new SimpleLogin();
+		$user = $login->GetUser();
 
 		if ($action == Actions::Logout){
 			$login->Logout();
-			header('Location: ' . self::MakeUri(Actions::Login));
+			header('Location: ' . self::MakeUri(Actions::Songbook));
 			return  $login->GetUser();
 		}
 
-		$user = $login->GetUser();
 		if ( !$user->IsAllowAccess ) {
 			$builder = $this->GetBuilder( Actions::Login, $user );
 			$model = $builder->Build($login);
-			$user = $login->GetUser();
 
 			// during form post the builder automatically attempts a login -- let's check whether that succeeded...
 			if ( !$user->IsAllowAccess ) {
@@ -104,13 +97,12 @@ class Ugs{
 			header( 'Location: ' . self::MakeUri( Actions::Songbook ) );
 			return  $user;
 		}
-		elseif ($action == Actions::Login){
-			// if for some reason visitor is already logged in but attempting to view the Login page, redirect:
-			header( 'Location: ' . self::MakeUri( Actions::Songbook ) );
-			return $user;
-		}
+    elseif ($action == Actions::Login && !$user->isAnonymous){
+      // if for some reason visitor is already logged in but attempting to view the Login page, redirect:
+      header( 'Location: ' . self::MakeUri( Actions::Songbook ) );
+      return $user;
+    }
 
-		// $user->IsAllowAccess = true;
 		return $user;
 	}
 

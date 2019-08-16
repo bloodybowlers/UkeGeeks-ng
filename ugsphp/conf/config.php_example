@@ -55,7 +55,7 @@ class Config {
 	const UseModRewrite = false;
 
 	/**
-	 * If true visitors must login to view or edit any page. Login must be enabled to Add or Update songs
+	 * If true visitors must login to view the site.
 	 * @constant(IsLoginRequired)
 	 * @var Boolean
 	 */

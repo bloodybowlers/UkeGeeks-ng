@@ -141,6 +141,18 @@ a {
 	color: #6B4900;
 	font-size: 86%;
 }
+.loginPage .songbooklink {
+	color: #944615;
+  /*cursor: default;*/
+}
+.loginPage .songbooklink:hover {
+	color: #944615;
+  background: none;
+}
+.loginPage .songbooklink a:hover, a:visited, a:link, a:active
+{
+      text-decoration: none;
+}
 
 .errorMessage {
 	background-color: #F9C95A;

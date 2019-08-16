@@ -33,6 +33,7 @@ class SongList_Vm extends _base_Vm {
 		$this->EditAjaxUri = Ugs::MakeUri( Actions::AjaxNewSong);
 		$this->ReindexUri = Ugs::MakeUri( Actions::Reindex);
 		$this->LogoutUri = Ugs::MakeUri( Actions::Logout);
+		$this->LoginUri = Ugs::MakeUri( Actions::Login);
 		$this->Headline = $title;
 		$this->SubHeadline = defined('Config::SongbookSubHeadline') ? Config::SongbookSubHeadline : 'Sample Styled Songbook &raquo;';
 		$this->PageTitle = $title . ' ' . Config::PageTitleSuffix;

@@ -1,4 +1,14 @@
 <?php
+// Another hack here :( we need a way of detecting if already logged and redirect if it is.
+// The AUTH code of UkeGeeks needs a full rewrite !
+$login = new SimpleLogin();
+if($login->getUser()->IsAuthenticated)
+{
+  header( 'Location: ' . self::MakeUri( Actions::Songbook ) );
+  exit;
+}
+
+//
 // requires View Model "Login_Vm"
 //
 $errCssstyle = (strlen($model->ErrorMessage) > 0) ? 'block' : 'none';
@@ -15,7 +25,7 @@ $errCssstyle = (strlen($model->ErrorMessage) > 0) ? 'block' : 'none';
 </head>
 <body class="loginPage">
 <section class="contentWrap">
-  <h1 style='text-align:center'><?php echo Config::SongbookHeadline?></h1>
+  <h1 style='text-align:center'><a class="songbooklink" href="<?php echo Ugs::MakeUri(Actions::Songbook)?>"><?php echo Config::SongbookHeadline?></a></h1>
 </section>
 <section class="overlay">
 	<hgroup>

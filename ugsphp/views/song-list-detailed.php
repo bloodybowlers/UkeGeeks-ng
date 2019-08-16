@@ -59,10 +59,13 @@ function BuildSongList($SongList)
 </head>
 <body class="songListPage">
 	<section class="contentWrap">
-		<?php if ($model->SiteUser->IsAuthenticated) { ?>
 			<aside class='SongListAside'>
 				<em style="font-size:.8em; color:#BCB59C;"><?php echo Lang::Get('hello').', '. $model->SiteUser->DisplayName; ?> !
+          <?php if(!$model->SiteUser->isAnonymous) {?>
 					(<a href="<?php echo($model->LogoutUri); ?>"><?php echo Lang::Get('logout')?></a>)
+          <?php } else {?>
+					(<a href="<?php echo($model->LoginUri); ?>"><?php echo Lang::Get('login')?></a>)
+          <?php }?>
         <div id="songsInDb"><?php printf(Lang::Get('songsCountInDb'), count($model->SongList))?></div>
 				</em>
 				<?php if ($model->IsNewAllowed) {
@@ -75,7 +78,6 @@ function BuildSongList($SongList)
 				}
 				?>
 			</aside>
-		<?php } ?>
   <div class='SongListTitle'>
     <h2><?php echo($model->SubHeadline); ?></h2>
     <h1><?php echo($model->Headline); ?></h1>

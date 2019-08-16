@@ -9,7 +9,8 @@ class SiteUser
 	public $Username = 'anon';
 	public $DisplayName = 'Guest';
 	public $MayEdit = false;
-  public $Language = 'EN';
+  public $Language = '';
+  public $isAnonymous = true;
 
 	/**
 	 * May user access any of the site -- this does NOT mean that
@@ -23,4 +24,9 @@ class SiteUser
 	 * @var boolean
 	 */
 	public $IsAuthenticated = false;
+
+  function __construct() {
+    $this->DisplayName = Lang::Get('guest_name');
+    $this->IsAllowAccess = !Config::IsLoginRequired; // is anonymous access granted ?
+  }
 }

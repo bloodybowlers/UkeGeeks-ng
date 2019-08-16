@@ -22,7 +22,7 @@ class SimpleLogin{
 		$username = strtolower(trim($username));
 		$password = trim($password);
 		$this->Set($this->ValidateUser($username, $password));
-		return $this->_user->IsAllowAccess ? Lang::Get('success') : Lang::Get('check_username_password');
+		return ($this->_user->IsAllowAccess && !$this->_user->isAnonymous) ? Lang::Get('success') : Lang::Get('check_username_password');
 	}
 
 	/**
@@ -67,6 +67,7 @@ class SimpleLogin{
 					$siteUser->Language = $account['lang'];
 					$siteUser->IsAllowAccess = true;
 					$siteUser->IsAuthenticated = true;
+          $siteUser->isAnonymous = false;
 				}
 				break;
 			}
