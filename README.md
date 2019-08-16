@@ -27,9 +27,11 @@ UkeGeeks is a songbook editor for ukulele originally created by [Buz Carter](htt
 - Added support for some more chordPro tags :
   - Key
   - Capo
+- Added an option to open/view song in new tabs
 - Custom chordPro tags :
   - x_UGNG_diagramPosition (possible values : left, top, none)
   - x_UGNG_lyricStyle (possible values : inline, above, minidiagrams)
+  - x_UGNG_hideChordEnclosures (possible values : yes, no)
 
 #### Improvements, small fixes, QoL changes
 
@@ -47,7 +49,6 @@ UkeGeeks is a songbook editor for ukulele originally created by [Buz Carter](htt
 - Removed the StaticsPrefix const from the config file. Now it's handled automagically
 - Removed 'no detailed list' and 'no editable song' mode. We want full functionality, all the time
 - Switched to jQuery 2
-- Added an option to open/view song in a new tab
 - Added a reindex button if an admin is logged in
 - Display number of songs in the book
 

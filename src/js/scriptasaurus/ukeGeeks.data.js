@@ -119,6 +119,13 @@ ukeGeeks.data = (function() {
 		 */
     this.x_UGNG_lyricStyle = '';
 
+		/**
+		 * Custom chord enclosure hiding/displaying for the current song
+		 * @property x_UGNG_hideChordEnclosures
+		 * @type string
+		 */
+    this.x_UGNG_hideChordEnclosures = '';
+
 		this.ugsMeta=[];
 		/**
 		 * array of data.dots 

@@ -115,6 +115,11 @@ ukeGeeks.cpmParser = function() {
 		if (tmp.length > 0) {
 			song.x_UGNG_lyricStyle = tmp[0];
 		}
+		// x_UGNG_hideChordEnclosures
+		tmp = _getInfo(songDom, _blockTypeEnum.x_UGNG_hideChordEnclosures);
+		if (tmp.length > 0) {
+			song.x_UGNG_hideChordEnclosures = tmp[0];
+		}
 		// Chord Definitions
 		tmp = _getInfo(songDom, _blockTypeEnum.ChordDefinition);
 		if (tmp.length > 0){
@@ -179,6 +184,7 @@ ukeGeeks.cpmParser = function() {
     Capo: 111,
     x_UGNG_diagramPosition: 112,
     x_UGNG_lyricStyle: 113,
+    x_UGNG_hideChordEnclosures: 114,
 		// Text Types
 		ChordText: 201,
 		PlainText: 202,
@@ -403,6 +409,9 @@ ukeGeeks.cpmParser = function() {
 							break;
 						case 'x_ugng_lyricstyle':
 							tmpBlk.type = _blockTypeEnum.x_UGNG_lyricStyle;
+							break;
+						case 'x_ugng_hidechordenclosures':
+							tmpBlk.type = _blockTypeEnum.x_UGNG_hideChordEnclosures;
 							break;
 						case 'ukegeeks-meta':
 							tmpBlk.type = _blockTypeEnum.UkeGeeksMeta;

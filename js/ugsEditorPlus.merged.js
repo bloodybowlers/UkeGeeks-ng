@@ -791,6 +791,24 @@ ugsEditorPlus.songUi = (function() {
       }
     }
 
+    // ==========================
+    // x_UGNG_hideChordEnclosures
+    // ==========================
+    if(song.x_UGNG_hideChordEnclosures != '')
+    {
+      $chkEnclosures = $('#chkEnclosures');
+      switch(song.x_UGNG_hideChordEnclosures.toLowerCase())
+      {
+        case 'no':
+          if($chkEnclosures.is(":checked")) $chkEnclosures.click();
+          break;
+        case 'yes':
+        default:
+          if(!$chkEnclosures.is(":checked")) $chkEnclosures.click();
+          break;
+      }
+    }
+
 		h = document.getElementById('songMeta');
 		if (!song.ugsMeta || (song.ugsMeta.length < 1)){
 			h.style.display = 'none';
