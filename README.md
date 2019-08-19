@@ -3,7 +3,7 @@
 ![Ukegeeks-ng](./img/screenshot.png)
 ![Ukegeeks-ng song](./img/screenshot2b.png)
 
-This fork is an attempt at an *enhanced/updated/modified/edited_to_fits_my_needs* version of UkeGeeks    
+This is an attempt at an *enhanced/updated/modified/edited_to_fits_my_needs* version of UkeGeeks    
 (since the original doesn't seems to accept pull request since early 2015).
 
 UkeGeeks is a songbook editor for ukulele originally created by [Buz Carter](http://pizzabytheslice.com) (buz@ukegeeks.com) :)
@@ -59,7 +59,7 @@ _______________________________________________________
 # Installation
 
 Nothing special here, you need Apache / Php.  
-Mod_rewrite is really recommanded too (for prettier url).
+Mod_rewrite is really recommended too (for prettier url).
 
 Just download the source and unzip-it (or use git clone) on your hosting space.
 
@@ -70,10 +70,11 @@ If you want to change this, read below (installing in a different directory).
 
 - **Step 1** : Rename the file **/ugsphp/conf/config.php_example** to **config.php** and edit-it to suits your needs (username, passwords, language, private/public mode, etc)
 - **Step 2** : Rename the **/ugsphp/conf/settings.js_example** to **settings.js** and edit-it to suits your preferences (diagram size, position, default theme, ...).
+- **Step 3** : Rename htaccess.txt to .htaccess
 
 And that's it, you should be good to go. Start adding songs :)
 
-### Optionnal
+### Optional
 
 #### Optional : installing in a different directory
 The Songbook assumes that it's installed in your web server's root directory, but you might want it in a subdirectory. Perhaps you want the URLs to be "mysite.com/hobbies/ukulele/music.php", for example. Excellent! To do this we just need to open config.php and change the subdirectory.
@@ -85,6 +86,8 @@ By default this is set to the root:
 You can just modify it to whatever you wish (include leading and trailing last forward slashes "/")
 
     const Subdirectory = '/hobbies/ukulele/';
+
+If you installed UkeGeeks-ng to a subdirectory, you have to modify the .htaccess. Change the **ErrorDocument** to the correct path of your install.
  
 #### Optional : enabling URL rewriting (apache mod_rewrite)
 
@@ -92,4 +95,4 @@ For nicer url you can enable mod_rewrite in the config.php file like this :
 
     const UseModRewrite = true;
 
-Note : There is currently a bug (issue #37) if your install isn't in the root directory...
+If you installed UkeGeeks-ng to a subdirectory, you have to modify the .htaccess. Change the line **RewriteBase** to the correct path of your install.

@@ -108,7 +108,7 @@ ugsEditorPlus.deleteSong = (function() {
       if(_openInNewTab)
         window.close();
       else
-        document.location.href = '/';
+        document.location.href = './';
     }
 	};
 
