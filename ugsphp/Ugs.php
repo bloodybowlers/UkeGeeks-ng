@@ -149,6 +149,10 @@ class Ugs{
       case Actions::ReverseChordFinder:
         $builder = new ReverseChordFinder_Vmb();
         break;
+      case Actions::Songbook:
+      case Actions::SongbookSorted:
+        $builder = new SongListDetailed_Vmb();
+        break;
       default:
         $builder = new SongListDetailed_Vmb();
         break;
@@ -255,8 +259,12 @@ class Ugs{
 				return 'chord-finder.php';
 			case Actions::ReverseChordFinder:
 				return 'reverse-chord-finder.php';
+      case Actions::Songbook:
+      case Actions::SongbookSorted:
+        return 'song-list-detailed.php';
+      default:
+        return 'song-list-detailed.php';
 		}
-		return 'song-list-detailed.php';
 	}
 
 }

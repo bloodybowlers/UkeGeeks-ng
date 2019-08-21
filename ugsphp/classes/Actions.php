@@ -18,6 +18,7 @@ final class Actions {
   const NotFound404 = 11;
   const ChordFinder = 12;
   const ReverseChordFinder = 13;
+	const SongbookSorted = 14;
 
 	/**
 	 * convert passed in string value to corresponding Actions enum
@@ -27,6 +28,7 @@ final class Actions {
 	public static function ToEnum($value){
 		switch (strtolower($value)) {
 			case 'song': return self::Song;
+			case 'songbook': return self::Songbook;
 		 	case 'reindex':  return self::Reindex;
 		 	case 'source': return self::Source;
 		 	case 'edit': return self::Edit;
@@ -38,8 +40,9 @@ final class Actions {
 		 	case 'notfound404': return self::NotFound404;
 		 	case 'chordfinder': return self::ChordFinder;
 		 	case 'reversechordfinder': return self::ReverseChordFinder;
+			case 'songbooksorted': return self::SongbookSorted;
+      default: return self::Songbook;
 		 }
-		 return self::Songbook;
 	}
 
 	/**
@@ -50,6 +53,7 @@ final class Actions {
 	public static function ToName($value){
 		switch($value){
 			case self::Song: return 'Song';
+			case self::Songbook: return 'Songbook';
 			case self::Source: return 'Source';
 		 	case self::Edit: return 'edit';
 			case self::Reindex: return 'Reindex';
@@ -61,7 +65,8 @@ final class Actions {
       case self::NotFound404: return 'notfound404';
       case self::ChordFinder: return 'chordfinder';
       case self::ReverseChordFinder: return 'reversechordfinder';
+			case self::SongbookSorted: return 'SongbookSorted';
+      default: return 'Songbook';
 		}
-		return 'Songbook';
 	}
 }

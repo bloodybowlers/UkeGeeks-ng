@@ -19,7 +19,8 @@ UkeGeeks is a songbook editor for ukulele originally created by [Buz Carter](htt
 - Added a **DELETE SONG** button to the EDITOR
 - Added **Auto-Scrolling** of song
 - Added **display of chord** diagram on **mouse hovering**
-- **Sorted the song list** by artist and song name + layout change for better search
+- **Sorted the song list** by artist and song name by default + layout change for better search
+- Added **song list sorting mode** : by category
 - Added full **TRANSLATION support**. Currently :
   - ENGLISH
   - FRENCH
@@ -35,6 +36,7 @@ UkeGeeks is a songbook editor for ukulele originally created by [Buz Carter](htt
   - x_UGNG_diagramPosition (possible values : left, top, none)
   - x_UGNG_lyricStyle (possible values : inline, above, minidiagrams)
   - x_UGNG_hideChordEnclosures (possible values : yes, no)
+  - x_UGNG_category (possible values, one or more comma separated : cat1, cat2, ...)
 
 #### Improvements, small fixes, QoL changes
 

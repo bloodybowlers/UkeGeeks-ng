@@ -10,7 +10,7 @@ function strCompareArtist($obj1, $obj2)
 } 
 
 // Build a songlist, alphabetically ordered, by ARTIST
-function BuildSongList($SongList)
+function BuildSongListByArtist($SongList)
 {
     usort($SongList, 'strCompareArtist');
 
@@ -40,6 +40,45 @@ function BuildSongList($SongList)
       echo '<li>';
       echo '  <a href="'.$song->Uri.'"'.(Config::openSongInNewTab?' target=_blank':'').'><span class="SongListSong" data-searchable="'.$song->Artist.' - '.$song->Title.'">'.$song->Title.'</span></a>';
       echo '</li>';
+    }
+}
+
+
+// Build a songlist, alphabetically ordered, by CATEGORY
+function BuildSongListByCategory($SongList)
+{
+    // Get all the categories
+    $uniqCat = array();
+    foreach($SongList as $s)
+    {
+      foreach($s->Category as $c)
+      {
+        if(!in_array($c, $uniqCat))
+          $uniqCat[] = ucfirst($c);
+      }
+    }
+    sort($uniqCat);
+
+    $currentCategory = '';
+    foreach($uniqCat as $category)
+    {
+      if($currentCategory != $category)
+      {
+        $currentCategory = $category;
+        echo "<div class='SongListLetter'>".$currentCategory."</div>";
+
+        echo '<ul>';
+        foreach($SongList as $s)
+        {
+          if(in_array(strtolower($category), array_map('strtolower', $s->Category)))
+          {
+            echo '<li>';
+            echo '  <a href="'.$s->Uri.'"'.(Config::openSongInNewTab?' target=_blank':'').'><span class="SongListSong" data-searchable="'.$s->Artist.' - '.$s->Title.'">'.$s->Title.'</span></a>';
+            echo '</li>';
+          }
+        }
+        echo '</ul>';
+      }
     }
 }
 
@@ -85,9 +124,20 @@ function BuildSongList($SongList)
 	<div>
 		<input class="quickSearch" id="quickSearch" autocomplete="off" type="text" placeholder="<?php echo Lang::Get('search_bar_placeholder')?>" />
   </div>
+  <div class='SongListSortMenu'>
+    <? echo Lang::Get('sort_by').' : '.'<a href="'.Ugs::MakeUri(Actions::Songbook).'">'.Lang::Get('artist').'</a> &mdash; <a href="'.Ugs::MakeUri(Actions::SongbookSorted, 'category').'">'.Lang::Get('category').'</a>'; ?>
+  </div>
 	<div class="songList">
 		<?php
-      BuildSongList($model->SongList);
+      // How to sort the songlist ?
+      switch($model->SongbookSorted)
+      {
+        case 'category':
+          BuildSongListByCategory($model->SongList);
+          break;
+        default:
+          BuildSongListByArtist($model->SongList);
+      }
 		?>
 	</div>
   <footer class='SongListFooter'><?php echo Lang::Get('poweredby')?> <a href='https://github.com/bloodybowlers/UkeGeeks-ng' target=_blank><?php echo $model->PoweredBy?></a></footer>

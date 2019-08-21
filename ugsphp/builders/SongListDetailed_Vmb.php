@@ -13,6 +13,7 @@ class SongListDetailed_Vmb extends _base_Vmb {
 		$viewModel->IsNewAllowed = $this->SiteUser->MayEdit && $this->SiteUser->IsAuthenticated;
 		$cache = new SongListCacheManager();
 		$viewModel->SongList = $cache->Get();
+    $viewModel->SongbookSorted = isset($_GET['sortby'])?$_GET['sortby']:'';
 		return $viewModel;
 	}
 

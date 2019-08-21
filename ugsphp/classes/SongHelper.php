@@ -19,6 +19,7 @@ class SongHelper {
 			 'album' => '',
        'key' => '',
        'capo' => '',
+       'category' => array(),
 			 'body' => '{title: '.Lang::Get('song_not_found_title').'}'."\n".'{subtitle: '.Lang::Get('song_not_found_subtitle').'}'."\n".
                  '[D]Lalalaaaa [A7]Lalaaaaaaaaaaaaala ?' . "\n" . 'Lala [G]laaaaaalalalaaaaaaaaaa [D]la !',
 			 'meta' => array()
@@ -36,6 +37,7 @@ class SongHelper {
 		$song->key = self::getKey($text);
 		$song->capo = self::getCapo($text);
 		$song->meta = self::getMeta($text);
+		$song->category = self::getCategory($text);
 		$song->body = $text;
 		
 		return $song;
@@ -114,6 +116,25 @@ class SongHelper {
 			}
 		}
 		return $rtn;
+	}
+
+	/**
+	 * parses x_UGNG_category tag: {x_UGNG_category: X,Y,Z}
+	 * @param string $text input string to be parses
+	 * @return array 
+	 */
+	private static function getCategory($text) {
+    $retCategories = array();
+		$x_ugng_category = self::_matchRegEx($text, 1, "/{x_UGNG_category\s*:\s*(.+?)}/i");
+    if($x_ugng_category != '')
+    {
+      $aCategories = explode(',', $x_ugng_category);
+      foreach($aCategories as $c)
+      {
+        $retCategories[] = trim($c);
+      }
+    }
+    return $retCategories;
 	}
 
 	/**

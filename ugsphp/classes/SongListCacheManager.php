@@ -71,6 +71,7 @@ class SongListCacheManager {
 			$song->Key = $parsed->key;
 			$song->Capo = $parsed->capo;
 			$song->Artist = $parsed->artist;
+			$song->Category = $parsed->category;
 
 			$list->SongList[] = $song;
 		}

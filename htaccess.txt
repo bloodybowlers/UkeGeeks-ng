@@ -30,6 +30,7 @@ ErrorDocument 404 /music.php?action=NotFound404
 #
 #  RewriteRule ^songbook/?$ music.php?action=songbook [L,QSA]
 #  RewriteRule ^songbook/(.*)$ music.php?action=song&song=$1 [L,QSA]
+#  RewriteRule ^songbooksorted/(.*)$ music.php?action=songbooksorted&sortby=$1 [L,QSA]
 #  RewriteRule ^source/(.*)$ music.php?action=source&song=$1 [L,QSA]
 #  RewriteRule ^edit/(.*)$ music.php?action=edit&song=$1 [L,QSA]
 #  RewriteRule ^reindex/?$ music.php?action=reindex [L,QSA]

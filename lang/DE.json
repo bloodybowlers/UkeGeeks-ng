@@ -145,5 +145,7 @@
   "song_title_required_notice" : "Kann später noch geändert werden. Muss mindestens 2 Zeichen lang sein.",
   "failed_create_new_song" : "Fehler beim Anlegen des neuen Songs<br/>Bitte Berechtigungen des Song-Ordners prüfen.",
   "untitled_song" : "Unbenannt",
-  "guest_name" : "Guest"
+  "guest_name" : "Guest",
+  "sort_by" : "Sort by",
+  "category" : "Category"
 }

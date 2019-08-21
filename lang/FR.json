@@ -145,5 +145,7 @@
   "song_title_required_notice" : "Vous pourrez le changer plus tard. Minimum 2 lettres.",
   "failed_create_new_song" : "Erreur pendant la création de la chanson.<br/>Vérifiez les permissions du dossier CPM",
   "untitled_song" : "Chanson-sans-Titre",
-  "guest_name" : "Ami musicien"
+  "guest_name" : "Ami musicien",
+  "sort_by" : "Trier par",
+  "category" : "Catégorie"
 }
