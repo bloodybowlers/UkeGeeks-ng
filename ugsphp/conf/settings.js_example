@@ -5,7 +5,7 @@
 	 * Allowed values: true, false
 	 * Default : false
 	 */
-	// "showEditOnLoad": false,
+	// "showEditOnLoad": true,
 
 	/* Lyric's font size (pts)
 	 * Allowed values (number): 6, 6.5, 7, 7.5, 8, 8.5, 9, 10, 11, 12, 13, 14
@@ -23,7 +23,7 @@
 	 * Allowed values (text): left, top, or none
 	 * Default : top
 	 */
-	// "diagramPosition": "top",
+	// "diagramPosition": "left",
 
 	/* Specify how chord names within lyrics should be shown
 	 * Allowed values (text): inline, above, or miniDiagrams
@@ -53,20 +53,20 @@
 	 * Allowed values: true, false
 	 * Default : true
 	 */
-	// "hideChordEnclosures": true,
+	// "hideChordEnclosures": false,
 
 	/* Order in which reference diagrams are sorted, either alphabetically (true) or order
 	 * in which they appear within the song (false).
 	 * Allowed values: true, false
 	 * Default : false
 	 */
-	// "sortAlphabetical": false,
+	// "sortAlphabetical": true,
 
 	/* If TRUE chords in the "commonChords" list will be ignored (excluded from reference chord diagrams)
 	 * Allowed values: true, false
 	 * Default : false
 	 */
-	// "ignoreCommonChords": false,
+	// "ignoreCommonChords": true,
 
 	/* Array of chords to be ignored when drawing reference diagrams (if "ignoreCommonChords" is enabled)
 	 * Allowed values (string or array of strings): as an  array of strings: ["A", "G"] or comma delimited list: "A, G"
@@ -78,14 +78,14 @@
 	 * Allowed values : true, false
 	 * Default : true
 	 */
-	// "autoScrollFeature": true,
+	// "autoScrollFeature": false,
 
 	/* Enable/disable the chords hovering feature
 	 * Allowed values : true, false
 	 * Default : false
 	 */
-	 // "chordsHovering": false,
-	 
+	 // "chordsHovering": true,
+
 	 /* dummy parameter to overcome the trailing comma problem
 	  * DO NOT CHANGE ANYTHING BELOW THIS LINE
 	  */

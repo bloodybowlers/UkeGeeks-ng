@@ -99,7 +99,7 @@ class Config {
 			'name' => 'Almighty Admin',
 			'isActive' => true,
 			'mayEdit' => true,
-      'lang' => ''
+			'lang' => ''
 		),
 		array(
 			'user' => 'guest',
@@ -107,7 +107,7 @@ class Config {
 			'name' => 'Honored Guest',
 			'isActive' => true,
 			'mayEdit' => false,
-      'lang' => ''
+			'lang' => ''
 		),
 		array(
 			'user' => 'jake',
@@ -115,7 +115,7 @@ class Config {
 			'name' => 'Jake S.',
 			'isActive' => false,
 			'mayEdit' => true,
-      'lang' => ''
+			'lang' => ''
 		)
 	);
 
