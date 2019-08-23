@@ -9,6 +9,12 @@ function strCompareArtist($obj1, $obj2)
       return strcasecmp($obj1->Artist, $obj2->Artist);
 } 
 
+// Sort by title
+function strCompareTitle($obj1, $obj2)
+{ 
+  return strcasecmp($obj1->Title, $obj2->Title);
+} 
+
 // Build a songlist, alphabetically ordered, by ARTIST
 function BuildSongListByArtist($SongList)
 {
@@ -43,6 +49,33 @@ function BuildSongListByArtist($SongList)
     }
 }
 
+
+// Build a songlist, alphabetically ordered, by TITLE
+function BuildSongListByTitle($SongList)
+{
+    usort($SongList, 'strCompareTitle');
+
+    $currentLetter = '';
+    $titleLetter = '';
+    foreach($SongList as $song)
+    {
+      $titleLetter = substr($song->Title, 0, 1);
+
+      if($currentLetter != $titleLetter)
+      {
+        // Special case for the first item in the list
+        if($currentLetter != '')
+          echo '</ol>';
+
+        $currentLetter = $titleLetter;
+        echo "<div class='SongListLetter'>".strtoupper($currentLetter)."</div><ol>";
+      }
+
+      echo '<li>';
+      echo '  <a href="'.$song->Uri.'"'.(Config::openSongInNewTab?' target=_blank':'').'><span class="SongListSong" data-searchable="'.$song->Artist.' - '.$song->Title.'">'.$song->Title.'</span></a>';
+      echo '</li>';
+    }
+}
 
 // Build a songlist, alphabetically ordered, by CATEGORY
 function BuildSongListByCategory($SongList)
@@ -125,7 +158,7 @@ function BuildSongListByCategory($SongList)
 		<input class="quickSearch" id="quickSearch" autocomplete="off" type="text" placeholder="<?php echo Lang::Get('search_bar_placeholder')?>" />
   </div>
   <div class='SongListSortMenu'>
-    <? echo Lang::Get('sort_by').' : '.'<a href="'.Ugs::MakeUri(Actions::Songbook).'">'.Lang::Get('artist').'</a> &mdash; <a href="'.Ugs::MakeUri(Actions::SongbookSorted, 'category').'">'.Lang::Get('category').'</a>'; ?>
+    <? echo Lang::Get('sort_by').' : '.'<a href="'.Ugs::MakeUri(Actions::Songbook).'">'.Lang::Get('artist').'</a> &mdash; <a href="'.Ugs::MakeUri(Actions::SongbookSorted, 'category').'">'.Lang::Get('category').'</a> &mdash; <a href="'.Ugs::MakeUri(Actions::SongbookSorted, 'title').'">'.Lang::Get('title').'</a>'; ?>
   </div>
 	<div class="songList">
 		<?php
@@ -134,6 +167,9 @@ function BuildSongListByCategory($SongList)
       {
         case 'category':
           BuildSongListByCategory($model->SongList);
+          break;
+        case 'title':
+          BuildSongListByTitle($model->SongList);
           break;
         default:
           BuildSongListByArtist($model->SongList);
