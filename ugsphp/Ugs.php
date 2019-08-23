@@ -210,11 +210,6 @@ class Ugs{
 		$actionName = Actions::ToName($action);
 		$param = trim($param);
 
-		if (!Config::UseModRewrite){
-			$actionParams = strlen($param) > 0 ? '&song=' . $param : '';
-			return $directory . 'music.php?action=' . $actionName . $actionParams;
-		}
-
 		if ($action == Actions::Song ) {
 			$actionName = 'songbook';
     }

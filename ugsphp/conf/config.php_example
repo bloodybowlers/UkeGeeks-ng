@@ -48,13 +48,6 @@ class Config {
 	// --------------------------------------
 
 	/**
-	 * Apache Web Server Only: if true links are generated using ModRewrite rules syntax (no query params)
-	 * @constant(UseModRewrite)
-	 * @var Boolean
-	 */
-	const UseModRewrite = false;
-
-	/**
 	 * If true visitors must login to view the site.
 	 * @constant(IsLoginRequired)
 	 * @var Boolean

@@ -37,6 +37,7 @@ UkeGeeks is a songbook editor for ukulele originally created by [Buz Carter](htt
   - x_UGNG_lyricStyle (possible values : inline, above, minidiagrams)
   - x_UGNG_hideChordEnclosures (possible values : yes, no)
   - x_UGNG_category (possible values, one or more comma separated : cat1, cat2, ...)
+- Support only **mod_rewrite** for nicer url
 
 #### Improvements, small fixes, QoL changes
 
@@ -72,7 +73,7 @@ If you want to change this, read below (installing in a different directory).
 
 - **Step 1** : Rename the file **/ugsphp/conf/config.php_example** to **config.php** and edit-it to suits your needs (username, passwords, language, private/public mode, etc)
 - **Step 2** : Rename the **/ugsphp/conf/settings.js_example** to **settings.js** and edit-it to suits your preferences (diagram size, position, default theme, ...).
-- **Step 3** : Rename htaccess.txt to .htaccess
+- **Step 3** : Rename **htaccess.txt** to **.htaccess**
 
 And that's it, you should be good to go. Start adding songs :)
 
@@ -89,12 +90,6 @@ You can just modify it to whatever you wish (include leading and trailing last f
 
     const Subdirectory = '/hobbies/ukulele/';
 
-If you installed UkeGeeks-ng to a subdirectory, you have to modify the .htaccess. Change the **ErrorDocument** to the correct path of your install.
- 
-#### Optional : enabling URL rewriting (apache mod_rewrite)
-
-For nicer url you can enable mod_rewrite in the config.php file like this :
-
-    const UseModRewrite = true;
-
-If you installed UkeGeeks-ng to a subdirectory, you have to modify the .htaccess. Change the line **RewriteBase** to the correct path of your install.
+If you installed UkeGeeks-ng to a subdirectory, you have to modify the **.htaccess** file :
+- Change the **ErrorDocument** to the correct path of your install.
+- Change the line **RewriteBase** to the correct path of your install.
