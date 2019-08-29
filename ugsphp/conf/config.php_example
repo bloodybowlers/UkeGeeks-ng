@@ -73,7 +73,7 @@ class Config {
 	 * @constant(openSongInNewTab)
 	 * @var Boolean
 	 */
-	const openSongInNewTab = false;
+	const openSongInNewTab = true;
 
 	/**
 	 * Language to use
