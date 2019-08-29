@@ -84,11 +84,11 @@ The Songbook assumes that it's installed in your web server's root directory, bu
 
 By default this is set to the root:
 
-    const Subdirectory = '/';
+    static private Subdirectory = '/';
     
 You can just modify it to whatever you wish (include leading and trailing last forward slashes "/")
 
-    const Subdirectory = '/hobbies/ukulele/';
+    static private Subdirectory = '/hobbies/ukulele/';
 
 If you installed UkeGeeks-ng to a subdirectory, you have to modify the **.htaccess** file :
 - Change the **ErrorDocument** to the correct path of your install.

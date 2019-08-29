@@ -42,7 +42,7 @@ $editDlgCssClassName = $model->IsUpdateAllowed ? '' : 'isHidden';
     <?php
       if(!$model->isOK)
       {
-        echo '<div style="margin-top:30px"><a href="'.Config::Subdirectory.'songbook/" class="baseBtn blueBtn">'.Lang::Get('not_found_click_here').'</div>';
+        echo '<div style="margin-top:30px"><a href="'.Config::getSubdirectory().'songbook/" class="baseBtn blueBtn">'.Lang::Get('not_found_click_here').'</div>';
       }
     ?></a>
 	<footer>
@@ -84,7 +84,7 @@ $editDlgCssClassName = $model->IsUpdateAllowed ? '' : 'isHidden';
 		  echo '<li class="navHome"> <a href="#" title="'.Lang::Get('close').'" onclick="window.close()"><span></span>'.Lang::Get('close').'</a></li>';
     }
     else {
-		  echo '<li class="navHome"> <a href="'.Config::Subdirectory.'songbook/" title="'.Lang::Get('tb_songbook_desc').'"><span></span>'.Lang::Get('tb_songbook').'</a></li>';
+		  echo '<li class="navHome"> <a href="'.Config::getSubdirectory().'songbook/" title="'.Lang::Get('tb_songbook_desc').'"><span></span>'.Lang::Get('tb_songbook').'</a></li>';
     } ?>
 		<li class="navLayout showOptionsBox"> <a href="#layoutOptions" title="<?php echo Lang::Get('tb_layout_descr')?>"><span></span><?php echo Lang::Get('tb_layout')?></a></li>
 		<li class="navInstruments showOptionsBox"> <a href="#tuningOptions" title="<?php echo Lang::Get('tb_tuning_descr')?>"><span></span><?php echo Lang::Get('tb_tuning')?></a></li>
@@ -235,8 +235,8 @@ $editDlgCssClassName = $model->IsUpdateAllowed ? '' : 'isHidden';
 <aside class="arrowBox helpOptions" id="helpDlg">
 	<fieldset class="arrowBoxContent linksList">
 		<ul>
-			<li><a href="<?php echo Config::Subdirectory.'chordfinder'?>" target="_blank"><?php echo Lang::Get('chord_finder')?></a></li>
-			<li><a href="<?php echo Config::Subdirectory.'reversechordfinder'?>" target="_blank"><?php echo Lang::Get('reverse_chord_finder')?></a></li>
+			<li><a href="<?php echo Config::getSubdirectory().'chordfinder'?>" target="_blank"><?php echo Lang::Get('chord_finder')?></a></li>
+			<li><a href="<?php echo Config::getSubdirectory().'reversechordfinder'?>" target="_blank"><?php echo Lang::Get('reverse_chord_finder')?></a></li>
       <li><hr></li>
       <li><a href="#" onclick="$('#aboutDlg').fadeIn(); return false;"><?php echo Lang::Get('about_credits')?></a></li>
 		</ul>

@@ -206,7 +206,7 @@ class Ugs{
 	 * @return  string
 	 */
 	public static function MakeUri($action, $param = ''){
-		$directory = defined('Config::Subdirectory') ? Config::Subdirectory : '/';
+		$directory = Config::getSubdirectory();
 		$actionName = Actions::ToName($action);
 		$param = trim($param);
 

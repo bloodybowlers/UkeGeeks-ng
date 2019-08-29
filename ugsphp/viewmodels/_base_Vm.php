@@ -14,7 +14,7 @@ abstract class _base_Vm{
 
 	function __construct()
 	{
-		$this->StaticsPrefix = defined('Config::Subdirectory') ? Config::Subdirectory : '/';
+		$this->StaticsPrefix = Config::getSubdirectory();
 
     // Did the user forget the leading slash ?
     if(substr($this->StaticsPrefix, 0, 1) != '/')

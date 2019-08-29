@@ -28,7 +28,7 @@ class Config {
 	 * @constant(Subdirectory)
 	 * @var String
 	 */
-	const Subdirectory = '/';
+	static private $Subdirectory = '/';
 
 	// --------------------------------------
 	// Attribution & Site Credits
@@ -119,4 +119,10 @@ class Config {
 		self::$SongDirectory = getcwd() . '/cpm/';
 		self::$AppDirectory = dirname(__FILE__).'/../';
 	}
+
+  public static function getSubdirectory()
+  {
+    // Did the user forget the trailing slash ?
+    return self::$Subdirectory.(substr(self::$Subdirectory, -1) != '/'?'/':'');
+  }
 }
