@@ -20,7 +20,7 @@ UkeGeeks is a songbook editor for ukulele originally created by [Buz Carter](htt
 - Added **Auto-Scrolling** of song
 - Added **display of chord** diagram on **mouse hovering**
 - **Sorted the song list** by artist and song name by default + layout change for better search
-- Added **song list sorting mode** : by category
+- Added **song list sorting mode** : by category, title, artist
 - Added full **TRANSLATION support**. Currently :
   - ENGLISH
   - FRENCH

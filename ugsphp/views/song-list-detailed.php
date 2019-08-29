@@ -27,7 +27,7 @@ function BuildSongListByArtist($SongList)
     {
       $songLetter = substr($song->Artist, 0, 1);
 
-      if($currentLetter != $songLetter)
+      if(strtoupper($currentLetter) != strtoupper($songLetter))
       {
         $currentLetter = $songLetter;
         echo "<div class='SongListLetter'>".strtoupper($currentLetter)."</div>";
@@ -61,7 +61,7 @@ function BuildSongListByTitle($SongList)
     {
       $titleLetter = substr($song->Title, 0, 1);
 
-      if($currentLetter != $titleLetter)
+      if(strtoupper($currentLetter) != strtoupper($titleLetter))
       {
         // Special case for the first item in the list
         if($currentLetter != '')
@@ -95,7 +95,7 @@ function BuildSongListByCategory($SongList)
     $currentCategory = '';
     foreach($uniqCat as $category)
     {
-      if($currentCategory != $category)
+      if(strtoupper($currentCategory) != strtoupper($category))
       {
         $currentCategory = $category;
         echo "<div class='SongListLetter'>".$currentCategory."</div>";
