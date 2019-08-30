@@ -115,10 +115,10 @@
   "chord_name_inline" : "Akkorde im Text",
   "chord_name_above" : "Akkorde über dem Text",
   "chord_and_name_above" : "Akkorde und Griffe über dem Text",
-  "standard_tuning" : "Standard Stimmung (GCEA)",
-  "baritone_tuning" : "Bariton Stimmung (DGBE)",
-  "standard_tun" : "Standard Sopran/Konzert/Tenor (GCEA)",
-  "baritone_tun" : "Bariton (DGBE)",
+  "standard_tuning" : "GCEA Standard",
+  "baritone_tuning" : "DGHE (DGBE) Bariton",
+  "standard_tun" : "Standard GCEA Sopran/Konzert/Tenor Ukulele",
+  "baritone_tun" : "DGHE (DGBE) Bariton Ukulele",
   "font_size" : "Schriftgröße",
   "steps" : "Schritt(e)",
   "original_transpose" : "original",
@@ -145,7 +145,7 @@
   "song_title_required_notice" : "Kann später noch geändert werden. Muss mindestens 2 Zeichen lang sein.",
   "failed_create_new_song" : "Fehler beim Anlegen des neuen Songs<br/>Bitte Berechtigungen des Song-Ordners prüfen.",
   "untitled_song" : "Unbenannt",
-  "guest_name" : "Guest",
-  "sort_by" : "Sort by",
-  "category" : "Category"
+  "guest_name" : "Gast",
+  "sort_by" : "Sortieren nach",
+  "category" : "Kategorie"
 }
